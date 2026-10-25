@@ -1,0 +1,3658 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>신나는 초등 한국사 탐험대 |</title>
+    <meta name="description"
+        content="2022 개정 초등 사회과 교육과정 맞춤 한국사 학습! 이야기형, 마인드맵, AI 생성 4컷 만화, 요약 노트 중 원하는 스타일로 고르고 생생한 영상과 이미지로 역사 개념을 마스터해보세요.">
+
+    <!-- 구글 폰트 (Pretendard & Gaegu 손글씨 폰트) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+       1. 디자인 토큰 & 밝고 따뜻한 노란색 파스텔 테마
+       ========================================================= */
+        :root {
+            --bg-gradient-start: #FFFDF0;
+            --bg-gradient-mid: #FEF9E3;
+            --bg-gradient-end: #FFF2CC;
+
+            --color-primary: #F59E0B;
+            /* 따뜻한 호박 노랑 */
+            --color-primary-dark: #D97706;
+            /* 진한 꿀벌 앰버 */
+            --color-primary-light: #FEF3C7;
+            /* 부드러운 버터 파스텔 */
+            --color-primary-soft: #FFFBEB;
+            /* 밝은 크림 배경 */
+
+            --color-accent-coral: #FB7185;
+            /* 산호 핑크 */
+            --color-accent-green: #10B981;
+            /* 민트 그린 (정답) */
+            --color-accent-blue: #3B82F6;
+            /* 스카이 블루 */
+            --color-accent-purple: #8B5CF6;
+            /* 바이올렛 */
+
+            --text-main: #374151;
+            /* 본문 텍스트 */
+            --text-muted: #6B7280;
+            /* 보조 설명 */
+            --text-heading: #1F2937;
+            /* 진한 제목 */
+
+            --surface-card: #FFFFFF;
+            --border-warm: #FDE68A;
+            /* 부드러운 노란색 테두리 */
+            --border-warm-hover: #FCD34D;
+
+            --shadow-sm: 0 2px 8px rgba(217, 119, 6, 0.08);
+            --shadow-md: 0 8px 24px rgba(217, 119, 6, 0.12);
+            --shadow-hover: 0 12px 28px rgba(217, 119, 6, 0.18);
+
+            --radius-sm: 12px;
+            --radius-md: 18px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+
+            --font-body: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+            --font-title: 'Gaegu', 'Noto Sans KR', cursive, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(175deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 40%, var(--bg-gradient-end) 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            word-break: keep-all;
+            overflow-x: hidden;
+            padding-bottom: 70px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* =========================================================
+       2. 헤더 & 히어로 영역
+       ========================================================= */
+        header {
+            padding: 32px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .curriculum-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FFF;
+            border: 2px solid var(--border-warm);
+            color: var(--color-primary-dark);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 800;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 12px;
+            animation: floatBadge 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatBadge {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-4px);
+            }
+        }
+
+        h1.site-title {
+            font-family: var(--font-title);
+            font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+            font-weight: 700;
+            color: #92400E;
+            line-height: 1.15;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0px #FDE68A;
+            letter-spacing: -0.5px;
+        }
+
+        .site-desc {
+            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+            color: #78350F;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        /* =========================================================
+       3. 2022 개정 교육과정 5대 단원 목차 (모바일 잘림 방지)
+       ========================================================= */
+        .toc-section {
+            margin-bottom: 24px;
+        }
+
+        .toc-title-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .toc-title-wrap h2 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #92400E;
+        }
+
+        .toc-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 2px;
+        }
+
+        .toc-btn {
+            appearance: none;
+            border: 1.5px solid var(--border-warm);
+            background: #FFFFFF;
+            color: #78350F;
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .toc-btn:hover {
+            background: var(--color-primary-soft);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--color-primary-dark);
+        }
+
+        .toc-btn.active {
+            background: var(--color-primary);
+            color: #FFFFFF;
+            border-color: var(--color-primary-dark);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+        }
+
+        /* =========================================================
+       4. 메인 학습 탭 네비게이션 (모바일 2열 정렬)
+       ========================================================= */
+        .tabs-container {
+            background: #FFFFFF;
+            border: 2px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 6px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+        }
+
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            width: 100%;
+        }
+
+        .tab-btn {
+            flex: 1 1 calc(25% - 6px);
+            min-width: 130px;
+            appearance: none;
+            border: none;
+            background: transparent;
+            padding: 12px 10px;
+            border-radius: var(--radius-md);
+            font-size: clamp(0.85rem, 2.2vw, 1rem);
+            font-weight: 700;
+            color: #78350F;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .tab-btn .tab-icon {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .tab-btn:hover {
+            background: var(--color-primary-soft);
+            color: var(--color-primary-dark);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+        }
+
+        /* =========================================================
+       5. 학생 맞춤형 개념 학습 유형 선택 컨트롤
+       ========================================================= */
+        .learning-style-selector {
+            background: #FFFBEB;
+            border: 2px dashed #FCD34D;
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .style-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .style-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #92400E;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .style-hint {
+            font-size: 0.85rem;
+            color: #B45309;
+            font-weight: 600;
+        }
+
+        .style-buttons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .style-btn {
+            flex: 1 1 calc(25% - 8px);
+            min-width: 140px;
+            appearance: none;
+            background: #FFFFFF;
+            border: 2px solid var(--border-warm);
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #78350F;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            white-space: nowrap;
+        }
+
+        .style-btn:hover {
+            background: var(--color-primary-light);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .style-btn.active {
+            background: #92400E;
+            color: #FFFFFF;
+            border-color: #78350F;
+            box-shadow: 0 4px 12px rgba(146, 64, 14, 0.3);
+        }
+
+        /* =========================================================
+       6. 공통 카드 스타일
+       ========================================================= */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: var(--surface-card);
+            border: 2px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px dashed #FEF3C7;
+            flex-wrap: wrap;
+        }
+
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .card-tag {
+            background: #FEF3C7;
+            color: #92400E;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            border: 1px solid #FDE68A;
+            white-space: nowrap;
+        }
+
+        .curriculum-std-tag {
+            background: #EEF2FF;
+            color: #4338CA;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            border: 1px solid #C7D2FE;
+        }
+
+        .card-title {
+            font-size: clamp(1.2rem, 3.2vw, 1.45rem);
+            font-weight: 800;
+            color: #1F2937;
+        }
+
+        /* =========================================================
+       7. 4대 개념 학습 뷰 (이야기, 마인드맵, 직접 그린 4컷 만화, 요약)
+       ========================================================= */
+        /* 1) 📖 이야기형 */
+        .concept-story-view {
+            background: #FFFDF5;
+            border: 1.5px solid #FDE68A;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .story-speaker-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FEF3C7;
+            color: #92400E;
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            margin-bottom: 10px;
+        }
+
+        .story-paragraph {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #374151;
+            margin-bottom: 12px;
+            text-indent: 12px;
+        }
+
+        .story-dialogue {
+            background: #FFFFFF;
+            border-left: 4px solid var(--color-primary);
+            padding: 10px 14px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 10px 0;
+            font-weight: 600;
+            color: #78350F;
+        }
+
+        /* 2) 🧠 마인드맵형 */
+        .concept-mindmap-view {
+            background: #FAFAFA;
+            border: 2px dashed #FCD34D;
+            border-radius: var(--radius-md);
+            padding: 22px 16px;
+            margin: 16px 0;
+        }
+
+        .mindmap-root-box {
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: #FFF;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            text-align: center;
+            max-width: 280px;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mindmap-branches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .mindmap-node {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border-warm);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            transition: all 0.2s ease;
+        }
+
+        .mindmap-node:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .node-header {
+            font-weight: 800;
+            color: #92400E;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px dashed #FEF3C7;
+            padding-bottom: 6px;
+        }
+
+        .node-subitems {
+            list-style: none;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #4B5563;
+        }
+
+        .node-subitems li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 4px;
+        }
+
+        .node-subitems li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* 3) 🎨 [직접 생성된 고화질 일러스트] 4컷 만화형 */
+        .concept-comic-view {
+            background: #FFFBEB;
+            border: 2px solid #FDE68A;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .comic-img-wrapper {
+            position: relative;
+            max-width: 680px;
+            margin: 0 auto 16px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(146, 64, 14, 0.15);
+            border: 3px solid #78350F;
+            background: #FFFFFF;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .comic-img-wrapper:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(146, 64, 14, 0.25);
+        }
+
+        .comic-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .comic-zoom-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFF;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .comic-caption-box {
+            background: #FFFFFF;
+            border: 1.5px dashed #FCD34D;
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            color: #78350F;
+            line-height: 1.6;
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* 4) 📝 핵심 요약 노트형 */
+        .concept-summary-view {
+            background: #FFFFFF;
+            margin: 16px 0;
+        }
+
+        .point-box {
+            background: var(--color-primary-soft);
+            border-left: 5px solid var(--color-primary);
+            padding: 14px 16px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 14px 0;
+            font-size: 0.95rem;
+            color: #78350F;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .bullet-list li::before {
+            content: "⭐";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 0.85rem;
+        }
+
+        /* =========================================================
+       8. 단원별 생생 영상 & 유물 갤러리 (깨짐 방지 및 로컬 대체 완비)
+       ========================================================= */
+        .media-study-section {
+            background: #FFF;
+            border: 2px solid var(--border-warm);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .media-section-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #92400E;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            border-bottom: 2px dashed #FEF3C7;
+            padding-bottom: 8px;
+        }
+
+        /* 반응형 비디오 카드 (안전한 링크 & 임베드 융합) */
+        .video-card-container {
+            margin-bottom: 24px;
+            background: #FFFBEB;
+            border: 1.5px solid var(--border-warm);
+            border-radius: var(--radius-md);
+            padding: 16px;
+        }
+
+        .video-responsive-box {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            background: #111827;
+            border: 2px solid #E5E7EB;
+        }
+
+        .video-responsive-box iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* 로컬 파일 환경 영상 안내 배너 */
+        .video-safe-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: #FFFFFF;
+            border: 1.5px solid #FDE68A;
+            border-radius: var(--radius-sm);
+        }
+
+        .video-safe-text {
+            font-size: 0.88rem;
+            color: #92400E;
+            line-height: 1.45;
+        }
+
+        .video-launch-btn {
+            appearance: none;
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 800;
+            padding: 10px 18px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .video-launch-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.45);
+        }
+
+        /* 충북 다채움 영상 학습 카드 */
+        .cbe-media-card {
+            background: linear-gradient(135deg, #F0F7FF 0%, #F5FAFF 100%);
+            border: 2px solid #BFDBFE;
+            border-radius: var(--radius-md);
+            padding: 22px 24px;
+            margin-top: 14px;
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cbe-media-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #2563EB, #0284C7);
+        }
+
+        .cbe-media-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cbe-tag-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .cbe-tag-main {
+            background: #1D4ED8;
+            color: #FFFFFF;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            letter-spacing: -0.2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cbe-tag-sub {
+            background: #E0E7FF;
+            color: #3730A3;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            border: 1px solid #C7D2FE;
+        }
+
+        .cbe-content-box {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .cbe-content-title {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #0F172A;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cbe-content-desc {
+            font-size: 0.94rem;
+            color: #475569;
+            line-height: 1.55;
+        }
+
+        .cbe-actions-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #CBD5E1;
+        }
+
+        .cbe-buttons-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cbe-primary-btn {
+            appearance: none;
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            color: #FFFFFF !important;
+            text-decoration: none;
+            font-size: 0.96rem;
+            font-weight: 800;
+            padding: 10px 22px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .cbe-primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+            background: linear-gradient(135deg, #1D4ED8, #1E40AF);
+        }
+
+        .cbe-alt-btn {
+            appearance: none;
+            background: #FFFFFF;
+            color: #DC2626 !important;
+            border: 1.5px solid #FCA5A5;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .cbe-alt-btn:hover {
+            background: #FEF2F2;
+            border-color: #EF4444;
+            transform: translateY(-1px);
+        }
+
+        .cbe-notice-tip {
+            font-size: 0.84rem;
+            color: #0369A1;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cbe-login-guide {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: #FFFBEB;
+            border: 1.5px solid #FDE68A;
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            font-size: 0.88rem;
+            color: #92400E;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        /* 퀴즈 단원 선택 모드 탭 */
+        .quiz-mode-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .quiz-mode-btn {
+            appearance: none;
+            background: #FFFDF5;
+            border: 1.5px solid var(--border-warm);
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #4B5563;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .quiz-mode-btn:hover {
+            border-color: var(--color-primary);
+            color: #92400E;
+            background: #FEF3C7;
+        }
+
+        .quiz-mode-btn.active {
+            background: #D97706;
+            color: #FFFFFF;
+            border-color: #D97706;
+            box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+        }
+
+        .quiz-shuffle-tag {
+            font-size: 0.82rem;
+            color: #059669;
+            background: #ECFDF5;
+            border: 1px solid #A7F3D0;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 700;
+        }
+
+        /* 유물 카드 그리드 */
+        .relic-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        .relic-img-card {
+            background: #FFFDF5;
+            border: 1.5px solid var(--border-warm);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .relic-img-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-primary);
+        }
+
+        .relic-img-frame {
+            width: 100%;
+            height: 170px;
+            background: #FEF9E3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .relic-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* 이미지 깨짐 방지용 귀여운 대체 일러스트 박스 */
+        .relic-fallback-badge {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #92400E;
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .relic-fallback-badge .badge-icon {
+            font-size: 3rem;
+        }
+
+        .relic-zoom-hint {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #FFF;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: var(--radius-full);
+            backdrop-filter: blur(2px);
+        }
+
+        .relic-card-body {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .relic-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #92400E;
+        }
+
+        .relic-std {
+            font-size: 0.8rem;
+            color: var(--color-primary-dark);
+            font-weight: 700;
+        }
+
+        .relic-desc {
+            font-size: 0.88rem;
+            color: var(--text-main);
+            line-height: 1.45;
+            margin-top: 4px;
+        }
+
+        .relic-source-tag {
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px dashed #E2E8F0;
+            font-size: 0.74rem;
+            color: #64748B;
+            line-height: 1.35;
+            word-break: keep-all;
+        }
+
+        /* 이미지 상세 확대 모달 */
+        .image-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 16px;
+            backdrop-filter: blur(4px);
+        }
+
+        .image-modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.25s ease;
+        }
+
+        .image-modal-content {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            max-width: 680px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #FFF;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-full);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+
+        .modal-close-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-img-wrap {
+            width: 100%;
+            max-height: 480px;
+            background: #FEF9E3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .modal-img-wrap img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+        }
+
+        .modal-body {
+            padding: 22px;
+        }
+
+        .modal-relic-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #92400E;
+            margin-bottom: 4px;
+        }
+
+        .modal-relic-era {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .modal-relic-docent {
+            font-size: 0.98rem;
+            line-height: 1.65;
+            color: var(--text-main);
+            background: var(--color-primary-soft);
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .modal-relic-source {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: #64748B;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            word-break: keep-all;
+        }
+
+        /* =========================================================
+       9. 3지 선다형 퀴즈 영역
+       ========================================================= */
+        .quiz-container {
+            background: #FFFFFF;
+            border: 3px solid var(--border-warm);
+            border-radius: var(--radius-lg);
+            padding: clamp(18px, 4vw, 32px);
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px dashed #FEF3C7;
+        }
+
+        .quiz-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #FEF3C7;
+            color: #92400E;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+        }
+
+        .quiz-score-badge {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            background: var(--color-primary-soft);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-warm);
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 12px;
+            background: #FEF3C7;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F59E0B, #FBBF24);
+            border-radius: var(--radius-full);
+            width: 20%;
+            transition: width 0.4s ease;
+        }
+
+        .quiz-card {
+            display: none;
+        }
+
+        .quiz-card.active {
+            display: block;
+            animation: fadeIn 0.35s ease;
+        }
+
+        .question-number {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--color-primary-dark);
+            margin-bottom: 6px;
+        }
+
+        .question-text {
+            font-size: clamp(1.15rem, 3vw, 1.45rem);
+            font-weight: 800;
+            color: #1F2937;
+            line-height: 1.45;
+            margin-bottom: 20px;
+        }
+
+        .question-hint-box {
+            background: #FFFBEB;
+            border: 1.5px dashed #FCD34D;
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            color: #92400E;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .option-btn {
+            appearance: none;
+            width: 100%;
+            border: 2px solid var(--border-warm);
+            background: #FFFFFF;
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            font-weight: 700;
+            color: #374151;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            min-height: 58px;
+        }
+
+        .option-btn .option-num {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-full);
+            background: #FEF3C7;
+            color: #92400E;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn .option-label {
+            flex: 1;
+            line-height: 1.35;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: #FFFBEB;
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.15);
+            color: #92400E;
+        }
+
+        .option-btn:hover:not(:disabled) .option-num {
+            background: var(--color-primary);
+            color: #FFFFFF;
+        }
+
+        .option-btn.correct {
+            background: #ECFDF5 !important;
+            border-color: #10B981 !important;
+            color: #065F46 !important;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2) !important;
+            animation: pulseGreen 0.4s ease;
+        }
+
+        .option-btn.correct .option-num {
+            background: #10B981 !important;
+            color: #FFFFFF !important;
+        }
+
+        .option-btn.wrong {
+            background: #FEF2F2 !important;
+            border-color: #EF4444 !important;
+            color: #991B1B !important;
+            animation: shake 0.4s ease;
+        }
+
+        .option-btn.wrong .option-num {
+            background: #EF4444 !important;
+            color: #FFFFFF !important;
+        }
+
+        @keyframes pulseGreen {
+            0% {
+                transform: scale(0.98);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20%,
+            60% {
+                transform: translateX(-6px);
+            }
+
+            40%,
+            80% {
+                transform: translateX(6px);
+            }
+        }
+
+        .feedback-box {
+            display: none;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin-top: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .feedback-box.show {
+            display: block;
+        }
+
+        .feedback-box.correct-feedback {
+            background: #ECFDF5;
+            border: 2px solid #A7F3D0;
+            color: #065F46;
+        }
+
+        .feedback-box.wrong-feedback {
+            background: #FFFBEB;
+            border: 2px solid #FDE68A;
+            color: #92400E;
+        }
+
+        .feedback-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .feedback-explanation {
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .quiz-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .quiz-nav-btn {
+            appearance: none;
+            background: var(--color-primary);
+            color: #FFF;
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .quiz-nav-btn:hover:not(:disabled) {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(217, 119, 6, 0.4);
+        }
+
+        .quiz-nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .quiz-result-view {
+            display: none;
+            text-align: center;
+            padding: 24px 12px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .quiz-result-view.active {
+            display: block;
+        }
+
+        .stamp-badge {
+            display: inline-block;
+            font-size: 4rem;
+            margin-bottom: 12px;
+            animation: popStamp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popStamp {
+            0% {
+                transform: scale(0) rotate(-20deg);
+            }
+
+            70% {
+                transform: scale(1.15) rotate(5deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .result-title {
+            font-family: var(--font-title);
+            font-size: clamp(2rem, 5vw, 2.6rem);
+            color: #92400E;
+            margin-bottom: 8px;
+        }
+
+        .result-score {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1F2937;
+            margin-bottom: 12px;
+        }
+
+        .result-score span {
+            color: var(--color-primary-dark);
+            font-size: 1.8rem;
+        }
+
+        .result-comment {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .restart-btn {
+            appearance: none;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: #FFF;
+            border: none;
+            padding: 14px 28px;
+            border-radius: var(--radius-full);
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+        }
+
+        .quiz-result-btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .restart-btn-secondary {
+            appearance: none;
+            background: #FFFDF5;
+            color: #92400E;
+            border: 2px solid #F59E0B;
+            padding: 13px 24px;
+            border-radius: var(--radius-full);
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .restart-btn-secondary:hover {
+            background: #FEF3C7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+        }
+
+        /* =========================================================
+       10. 푸터 및 모바일 반응형 미디어 쿼리
+       ========================================================= */
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding: 24px 16px;
+            color: #92400E;
+            font-size: 0.88rem;
+        }
+
+        .footer-note {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            header {
+                padding: 22px 0 14px;
+            }
+
+            .toc-nav {
+                gap: 6px;
+            }
+
+            .toc-btn {
+                padding: 6px 11px;
+                font-size: 0.82rem;
+                border-radius: 14px;
+            }
+
+            .tabs-nav {
+                gap: 4px;
+            }
+
+            .tab-btn {
+                flex: 1 1 calc(50% - 4px);
+                min-width: calc(50% - 4px);
+                padding: 10px 6px;
+                font-size: 0.86rem;
+            }
+
+            .style-btn {
+                flex: 1 1 calc(50% - 6px);
+                min-width: calc(50% - 6px);
+                padding: 8px 10px;
+                font-size: 0.84rem;
+            }
+
+            .card {
+                padding: 18px 14px;
+                border-radius: var(--radius-md);
+            }
+
+            .quiz-container {
+                padding: 18px 14px;
+            }
+
+            .option-btn {
+                padding: 12px 14px;
+                font-size: 0.95rem;
+                gap: 10px;
+            }
+
+            .video-safe-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .video-launch-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .toc-btn {
+                padding: 5px 8px;
+                font-size: 0.76rem;
+            }
+
+            .tab-btn {
+                font-size: 0.78rem;
+                padding: 8px 4px;
+            }
+        }
+    
+:root[data-theme="dark"]{color-scheme:dark;--bg-gradient-start:#111827;--bg-gradient-mid:#172033;--bg-gradient-end:#202a3b;--text-main:#e5e7eb;--text-heading:#fff3d2;--text-muted:#b8c1d1;--surface-card:#202c40;--color-primary-soft:#332c21;--color-primary-light:#403421;--border-warm:#79613a;--color-primary-dark:#fbbf24}
+.site-tools{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:14px}
+.site-tools button,.feature-btn{font:inherit;border:1px solid var(--border-warm);border-radius:12px;background:var(--surface-card);color:var(--text-main);padding:10px 16px;cursor:pointer}
+.site-tools input{width:80px}.site-tools label{display:flex;align-items:center;gap:6px}
+.relic-link-art{padding:36px;text-align:center;font-size:4rem;background:var(--color-primary-soft)}
+.feature-dialog{border:1px solid var(--border-warm);border-radius:24px;background:var(--surface-card);color:var(--text-main);padding:28px;width:min(540px,92vw);max-height:90vh;overflow:auto;margin:auto;box-shadow:0 18px 80px #0005}
+.feature-dialog::backdrop{background:#0f172abb;backdrop-filter:blur(4px)}
+.feature-dialog h2{font-family:var(--font-title);font-size:2rem;margin-bottom:10px}.feature-dialog p{margin:12px 0}.feature-options{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.feature-options button{flex:1}
+.privacy-note{font-size:.82rem;color:var(--text-muted);line-height:1.7}.certificate-entry{margin:24px 0;padding:22px;border:2px dashed var(--border-warm);border-radius:18px}.certificate-entry label{display:block;margin:14px 0 6px}.certificate-entry input{font:inherit;width:min(100%,320px);padding:12px;border:1px solid var(--border-warm);border-radius:10px;background:var(--surface-card);color:var(--text-main)}
+#certificate-preview{width:100%;height:auto;border:1px solid #dbc58d;background:white;margin:12px 0}.feature-btn:focus-visible,.site-tools button:focus-visible{outline:3px solid #3b82f6;outline-offset:3px}
+@media print{@page{size:A4 landscape;margin:12mm}body>*{display:none!important}body>#certificate-dialog{display:block!important;position:static!important;border:0;padding:0;margin:0;width:100%;max-width:none;max-height:none;box-shadow:none;background:white}#certificate-dialog>*{display:none!important}#certificate-dialog>#certificate-preview{display:block!important;border:0;width:100%;max-height:180mm;object-fit:contain}#certificate-dialog::backdrop{background:transparent}}
+
+:root[data-theme="dark"] .curriculum-badge{background:#262626}
+:root[data-theme="dark"] h1.site-title{color:#ecae89;text-shadow:none}
+:root[data-theme="dark"] .site-desc{color:#ecac89}
+:root[data-theme="dark"] .toc-title-wrap h2{color:#ecae89}
+:root[data-theme="dark"] .toc-btn{background:#262626;color:#ecac89}
+:root[data-theme="dark"] /* =========================================================
+       4. 메인 학습 탭 네비게이션 (모바일 2열 정렬)
+       ========================================================= */
+        .tabs-container{background:#262626}
+:root[data-theme="dark"] .tab-btn{color:#ecac89}
+:root[data-theme="dark"] /* =========================================================
+       5. 학생 맞춤형 개념 학습 유형 선택 컨트롤
+       ========================================================= */
+        .learning-style-selector{background:#3a3318}
+:root[data-theme="dark"] .style-title{color:#ecae89}
+:root[data-theme="dark"] .style-hint{color:#efbf9a}
+:root[data-theme="dark"] .style-btn{background:#262626;color:#ecac89}
+:root[data-theme="dark"] .card-tag{background:#41391a;color:#ecae89}
+:root[data-theme="dark"] .curriculum-std-tag{background:#171f39;color:#c6c3ef}
+:root[data-theme="dark"] .card-title{color:#a7b7cd}
+:root[data-theme="dark"] /* =========================================================
+       7. 4대 개념 학습 뷰 (이야기,:root[data-theme="dark"] 마인드맵,:root[data-theme="dark"] 직접 그린 4컷 만화,:root[data-theme="dark"] 요약)
+       ========================================================= */
+        /* 1) 📖 이야기형 */
+        .concept-story-view{background:#383217}
+:root[data-theme="dark"] .story-speaker-badge{background:#41391a;color:#ecae89}
+:root[data-theme="dark"] .story-paragraph{color:#adb7c7}
+:root[data-theme="dark"] .story-dialogue{background:#262626;color:#ecac89}
+:root[data-theme="dark"] /* 2) 🧠 마인드맵형 */
+        .concept-mindmap-view{background:#282828}
+:root[data-theme="dark"] .mindmap-node{background:#262626}
+:root[data-theme="dark"] .node-header{color:#ecae89}
+:root[data-theme="dark"] .node-subitems{color:#b4bbc6}
+:root[data-theme="dark"] /* 3) 🎨 [직접 생성된 고화질 일러스트] 4컷 만화형 */
+        .concept-comic-view{background:#3a3318}
+:root[data-theme="dark"] .comic-img-wrapper{background:#262626}
+:root[data-theme="dark"] .comic-caption-box{background:#262626;color:#ecac89}
+:root[data-theme="dark"] /* 4) 📝 핵심 요약 노트형 */
+        .concept-summary-view{background:#262626}
+:root[data-theme="dark"] .point-box{color:#ecac89}
+:root[data-theme="dark"] /* =========================================================
+       8. 단원별 생생 영상 & 유물 갤러리 (깨짐 방지 및 로컬 대체 완비)
+       ========================================================= */
+        .media-study-section{background:#262626}
+:root[data-theme="dark"] .media-section-title{color:#ecae89}
+:root[data-theme="dark"] /* 반응형 비디오 카드 (안전한 링크 & 임베드 융합) */
+        .video-card-container{background:#3a3318}
+:root[data-theme="dark"] /* 로컬 파일 환경 영상 안내 배너 */
+        .video-safe-banner{background:#262626}
+:root[data-theme="dark"] .video-safe-text{color:#ecae89}
+:root[data-theme="dark"] /* 충북 다채움 영상 학습 카드 */
+        .cbe-media-card{background:linear-gradient(135deg, #172739 0%, #172838 100%)}
+:root[data-theme="dark"] .cbe-tag-sub{background:#19213c;color:#b9b6e9}
+:root[data-theme="dark"] .cbe-content-title{color:#9aaddb}
+:root[data-theme="dark"] .cbe-content-desc{color:#b1bccb}
+:root[data-theme="dark"] .cbe-alt-btn{background:#262626;color:#f4bdbd !important}
+:root[data-theme="dark"] .cbe-alt-btn:hover{background:#391717}
+:root[data-theme="dark"] .cbe-notice-tip{color:#89c9ec}
+:root[data-theme="dark"] .cbe-login-guide{background:#3a3318;color:#ecae89}
+:root[data-theme="dark"] .quiz-mode-btn{background:#383217;color:#b4bbc6}
+:root[data-theme="dark"] .quiz-mode-btn:hover{color:#ecae89;background:#41391a}
+:root[data-theme="dark"] .quiz-shuffle-tag{color:#89eccd;background:#183a2a}
+:root[data-theme="dark"] .relic-img-card{background:#383217}
+:root[data-theme="dark"] .relic-img-frame{background:#3c3518}
+:root[data-theme="dark"] /* 이미지 깨짐 방지용 귀여운 대체 일러스트 박스 */
+        .relic-fallback-badge{background:linear-gradient(135deg, #41391a, #4c431f);color:#ecae89}
+:root[data-theme="dark"] .relic-name{color:#ecae89}
+:root[data-theme="dark"] .relic-source-tag{color:#d3d8df}
+:root[data-theme="dark"] .image-modal-content{background:#262626}
+:root[data-theme="dark"] .modal-img-wrap{background:#3c3518}
+:root[data-theme="dark"] .modal-relic-title{color:#ecae89}
+:root[data-theme="dark"] .modal-relic-source{color:#d3d8df;background:#182837}
+:root[data-theme="dark"] /* =========================================================
+       9. 3지 선다형 퀴즈 영역
+       ========================================================= */
+        .quiz-container{background:#262626}
+:root[data-theme="dark"] .quiz-badge{background:#41391a;color:#ecae89}
+:root[data-theme="dark"] .progress-track{background:#41391a}
+:root[data-theme="dark"] .question-text{color:#a7b7cd}
+:root[data-theme="dark"] .question-hint-box{background:#3a3318;color:#ecae89}
+:root[data-theme="dark"] .option-btn{background:#262626;color:#adb7c7}
+:root[data-theme="dark"] .option-btn .option-num{background:#41391a;color:#ecae89}
+:root[data-theme="dark"] .option-btn:hover:not(:disabled){background:#3a3318;color:#ecae89}
+:root[data-theme="dark"] .option-btn.correct{background:#183a2a !important;color:#89ecd0 !important}
+:root[data-theme="dark"] .option-btn.wrong{background:#391717 !important;color:#ec9494 !important}
+:root[data-theme="dark"] .feedback-box.correct-feedback{background:#183a2a;color:#89ecd0}
+:root[data-theme="dark"] .feedback-box.wrong-feedback{background:#3a3318;color:#ecae89}
+:root[data-theme="dark"] .result-title{color:#ecae89}
+:root[data-theme="dark"] .result-score{color:#a7b7cd}
+:root[data-theme="dark"] .restart-btn-secondary{background:#383217;color:#ecae89}
+:root[data-theme="dark"] .restart-btn-secondary:hover{background:#41391a}
+:root[data-theme="dark"] /* =========================================================
+       10. 푸터 및 모바일 반응형 미디어 쿼리
+       ========================================================= */
+        footer{color:#ecae89}
+:root[data-theme="dark"] [style*="background: #FFF"]{background:#202c40!important}:root[data-theme="dark"] [style*="color: #92400E"]{color:#f4cc89!important}
+</style>
+</head>
+
+<body>
+
+<div class="site-tools" aria-label="화면 및 배경음악 설정">
+<button type="button" id="theme-toggle" aria-pressed="false">🌙 다크 모드</button>
+<button type="button" id="music-toggle" aria-pressed="false">♫ 배경음악 켜기</button>
+<label>음량 <input id="music-volume" type="range" min="0" max="100" value="20" aria-label="배경음악 음량"></label>
+</div>
+<dialog id="welcome-dialog" class="feature-dialog" aria-labelledby="welcome-title">
+<h2 id="welcome-title">역사 탐험을 시작해요!</h2><p>눈이 편안한 화면을 골라 주세요.</p>
+<div class="feature-options"><button type="button" class="feature-btn" data-start-theme="light">☀️ 라이트 모드</button><button type="button" class="feature-btn" data-start-theme="dark">🌙 다크 모드</button></div>
+<label><input type="checkbox" id="welcome-music"> 잔잔한 국악풍 배경음악과 함께하기</label>
+<p class="privacy-note">기존 곡이나 녹음 파일 없이 이 페이지가 직접 만드는 오음계 연주예요. 음악은 선택 후 재생되며 언제든 끌 수 있어요.</p>
+</dialog>
+<dialog id="certificate-dialog" class="feature-dialog" aria-labelledby="certificate-heading">
+<h2 id="certificate-heading">나만의 역사 탐험 인증서</h2><canvas id="certificate-preview" width="1600" height="1100" aria-label="이름과 완료 단원이 적힌 인증서 미리보기"></canvas>
+<div class="feature-options"><button type="button" class="feature-btn" id="save-certificate">PNG 저장</button><button type="button" class="feature-btn" id="print-certificate">인쇄 / PDF 저장</button><button type="button" class="feature-btn" id="close-certificate">닫기</button></div>
+<p class="privacy-note">인쇄 창에서 ‘PDF로 저장’을 선택할 수 있어요. 이 페이지는 인증서에 입력한 이름을 수집·전송·보관하지 않습니다. 저장한 인증서 파일은 직접 관리해 주세요.</p>
+</dialog>
+
+
+    <div class="container">
+
+        <!-- 1. 헤더 영역 -->
+        <header>
+            <div class="curriculum-badge">
+                <span>📜</span> 2022 개정 사회과 교육과정 (초등 5~6학년군)
+            </div>
+            <h1 class="site-title" id="main-heading">🇰🇷 신나는 초등 한국사 탐험대</h1>
+            <p class="site-desc">AI가 그린 4컷 만화와 맞춤 공부 유형으로 만나는 우리 역사 이야기!</p>
+
+            <!-- 2. 시대별 목차 (2022 개정 교육과정 5대 단원) -->
+            <section class="toc-section" aria-label="시대별 목차 빠른 이동">
+                <div class="toc-title-wrap">
+                    <span>📚</span>
+                    <h2>2022 개정 교육과정 단원 목차</h2>
+                </div>
+                <nav class="toc-nav" id="toc-buttons" role="tablist">
+                    <button type="button" class="toc-btn active" data-era="all" id="toc-all">🌟 전체 단원</button>
+                    <button type="button" class="toc-btn" data-era="unit1" id="toc-unit1">1단원. 고조선의 시작</button>
+                    <button type="button" class="toc-btn" data-era="unit2" id="toc-unit2">2단원. 삼국의 발전</button>
+                    <button type="button" class="toc-btn" data-era="unit3" id="toc-unit3">3단원. 통일신라와 발해</button>
+                    <button type="button" class="toc-btn" data-era="unit4" id="toc-unit4">4단원. 고려의 문화</button>
+                    <button type="button" class="toc-btn" data-era="unit5" id="toc-unit5">5단원. 조선과 과학·극복</button>
+                </nav>
+            </section>
+        </header>
+
+        <!-- 3. 메인 학습 탭 네비게이션 -->
+        <nav class="tabs-container" aria-label="학습 모드 선택">
+            <div class="tabs-nav" role="tablist">
+                <button type="button" class="tab-btn active" data-target="tab-concept" id="tab-btn-concept" role="tab"
+                    aria-selected="true">
+                    <span class="tab-icon">💡</span>
+                    <span>맞춤 개념공부</span>
+                </button>
+                <button type="button" class="tab-btn" data-target="tab-media" id="tab-btn-media" role="tab"
+                    aria-selected="false">
+                    <span class="tab-icon">🎬</span>
+                    <span>영상·유물관</span>
+                </button>
+                <button type="button" class="tab-btn" data-target="tab-figures" id="tab-btn-figures" role="tab"
+                    aria-selected="false">
+                    <span class="tab-icon">👑</span>
+                    <span>역사 인물전</span>
+                </button>
+                <button type="button" class="tab-btn" data-target="tab-quiz" id="tab-btn-quiz" role="tab"
+                    aria-selected="false">
+                    <span class="tab-icon">✏️</span>
+                    <span>스스로 퀴즈</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 4. 메인 콘텐츠 영역 -->
+        <main id="main-content">
+
+            <!-- =======================================================
+           탭 1: 맞춤 개념공부 (4컷 만화 직접 생성 이미지 탑재!)
+           ======================================================= -->
+            <section class="tab-content active" id="tab-concept" role="tabpanel">
+
+                <!-- 스타일 선택 바 -->
+                <div class="learning-style-selector">
+                    <div class="style-header">
+                        <div class="style-title">
+                            <span>🎨</span> 나의 맞춤 공부 유형 선택하기
+                        </div>
+                        <span class="style-hint">버튼을 누르면 만화, 마인드맵, 이야기로 쏙 바뀌어요!</span>
+                    </div>
+                    <div class="style-buttons-grid" role="group" aria-label="개념 학습 유형 선택">
+                        <button type="button" class="style-btn" data-style="story" id="btn-style-story">
+                            <span>📖</span>
+                            <span>이야기형 (스토리)</span>
+                        </button>
+                        <button type="button" class="style-btn" data-style="mindmap" id="btn-style-mindmap">
+                            <span>🧠</span>
+                            <span>마인드맵 (개념도)</span>
+                        </button>
+                        <button type="button" class="style-btn active" data-style="comic" id="btn-style-comic">
+                            <span>🎨</span>
+                            <span>4컷 만화 (웹툰)</span>
+                        </button>
+                        <button type="button" class="style-btn" data-style="summary" id="btn-style-summary">
+                            <span>📝</span>
+                            <span>핵심 요약 (노트)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- [1단원] 고조선 -->
+                <article class="card era-card" data-era="unit1" id="card-unit1">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">1단원</span>
+                            <span class="curriculum-std-tag">[6사04-01,6사04-02]</span>
+                            <h3 class="card-title">우리나라 최초의 국가, 고조선의 건국과 삶</h3>
+                        </div>
+                    </div>
+
+                    <!-- 3) 4컷 만화 뷰 (직접 그린 웹툰 이미지 연동) -->
+                    <div class="concept-view concept-comic-view" data-view="comic">
+                        <div class="comic-img-wrapper"
+                            onclick="openRelicModal('단군왕검과 고조선 건국 4컷 만화', '1단원: 고조선의 시작 (BC 2333)', '환웅과 웅녀 이야기부터 단군왕검의 홍익인간 이념, 고조선 건국과 청동기 8조법 사회까지 귀여운 캐릭터로 만나보는 4컷 만화예요!', './images/comic_unit1.jpg')">
+                            <img src="./images/comic_unit1.jpg" alt="고조선 건국 4컷 만화" loading="lazy">
+                            <span class="comic-zoom-badge">🔍 터치해서 크게 보기</span>
+                        </div>
+                        <div class="comic-caption-box">
+                            <strong>💡 4컷 만화 줄거리:</strong><br>
+                            1컷: 하늘에서 인간을 돕기 위해 내려온 환웅 ➔ 2컷: 동굴에서 쑥과 마늘을 먹는 곰과 호랑이 ➔ 3컷: 100일을 견뎌 여인이 된 웅녀 ➔ 4컷: 홍익인간의
+                            뜻으로 고조선을 세운 단군왕검!
+                        </div>
+                    </div>
+
+                    <!-- 1) 이야기형 뷰 -->
+                    <div class="concept-view concept-story-view" data-view="story" style="display:none;">
+                        <div class="story-speaker-badge">🎙️ 타임머신 옛날이야기</div>
+                        <p class="story-paragraph">
+                            아주 먼 옛날, 하늘나라 환인의 아들 환웅은 인간 세상을 널리 이롭게 하고 싶어 비, 바람, 구름을 다스리는 신하들과 함께 태백산 신단수 아래로 내려왔어요.
+                        </p>
+                        <div class="story-dialogue">
+                            🐻 곰: "환웅님! 저도 사람이 되어 착하게 살고 싶어요!"<br>
+                            🌿 환웅: "쑥 한 자루와 마늘 스무 개를 먹고 백 일 동안 햇빛을 보지 않으면 사람이 될 수 있단다."
+                        </div>
+                        <p class="story-paragraph">
+                            호랑이는 뛰쳐나갔지만, 끈기 있게 견딘 곰은 '웅녀'가 되었지요. 환웅과 웅녀 사이에서 태어난 분이 바로 <strong>단군왕검</strong>이에요. 기원전
+                            2333년 '널리 인간을 이롭게 한다'는 <strong>홍익인간</strong>의 큰 뜻으로 고조선을 세웠답니다!
+                        </p>
+                    </div>
+
+                    <!-- 2) 마인드맵형 뷰 -->
+                    <div class="concept-view concept-mindmap-view" data-view="mindmap" style="display:none;">
+                        <div class="mindmap-root-box">🪵 단군왕검의 고조선</div>
+                        <div class="mindmap-branches">
+                            <div class="mindmap-node">
+                                <div class="node-header">🌟 건국 이념</div>
+                                <ul class="node-subitems">
+                                    <li><strong>홍익인간:</strong> 널리 인간을 이롭게 함</li>
+                                    <li><strong>제정일치:</strong> 단군(제사장) + 왕검(정치지배자)</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">⚒️ 청동기 문화 & 유물</div>
+                                <ul class="node-subitems">
+                                    <li><strong>탁자식 고인돌:</strong> 지배자의 권력 상징</li>
+                                    <li><strong>비파형 동검:</strong> 독자적 청동기 무기</li>
+                                    <li><strong>미송리식 토기:</strong> 고조선 세력 범위 증명</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">⚖️ 사회 모습 (8조법)</div>
+                                <ul class="node-subitems">
+                                    <li>생명과 노동력(농사) 중시</li>
+                                    <li>사유 재산과 화폐 사용 인정</li>
+                                    <li>신분 사회(노비 존재) 형성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4) 핵심 요약형 뷰 -->
+                    <div class="concept-view concept-summary-view" data-view="summary" style="display:none;">
+                        <div class="point-box">
+                            <strong>💡 2022 개정 핵심 포인트:</strong> 고조선은 청동기 문화를 바탕으로 계급이 발생하고 국가의 기틀(8조법)을 다진 우리나라 최초의
+                            국가예요.
+                        </div>
+                        <ul class="bullet-list">
+                            <li><strong>단군왕검:</strong> 제사와 정치를 함께 다스린 제정일치 지배자예요.</li>
+                            <li><strong>세력 범위를 알려주는 3대 유물:</strong> 비파형 동검, 탁자식 고인돌, 미송리식 토기.</li>
+                            <li><strong>8조법:</strong> 생명과 농사, 사유 재산을 소중히 여긴 법률이에요.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- [2단원] 삼국 시대 -->
+                <article class="card era-card" data-era="unit2" id="card-unit2">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">2단원</span>
+                            <span class="curriculum-std-tag">[6사04-01,6사04-02]</span>
+                            <h3 class="card-title">고구려 · 백제 · 신라, 삼국의 성립과 전성기 경쟁</h3>
+                        </div>
+                    </div>
+
+                    <!-- 3) 4컷 만화 뷰 -->
+                    <div class="concept-view concept-comic-view" data-view="comic">
+                        <div class="comic-img-wrapper"
+                            onclick="openRelicModal('삼국의 전성기와 한강 쟁탈전 4컷 만화', '2단원: 삼국의 발전', '백제 근초고왕, 고구려 광개토대왕, 신라 진흥왕과 화랑들이 한강을 차지하며 전성기를 맞이한 역사적 원리를 알기 쉽게 설명한 만화예요!', './images/comic_unit2.jpg')">
+                            <img src="./images/comic_unit2.jpg" alt="삼국의 발전 4컷 만화" loading="lazy">
+                            <span class="comic-zoom-badge">🔍 터치해서 크게 보기</span>
+                        </div>
+                        <div class="comic-caption-box">
+                            <strong>💡 4컷 만화 줄거리:</strong><br>
+                            1컷: 4세기 한강을 차지하고 칠지도를 보낸 백제 근초고왕 ➔ 2컷: 5세기 만주 벌판을 정복한 고구려 광개토대왕 ➔ 3컷: 6세기 화랑들과 한강을 점령한 신라
+                            진흥왕 ➔ 4컷: 한강을 차지한 나라가 최고의 전성기였음을 깨달은 어린이 탐험가!
+                        </div>
+                    </div>
+
+                    <!-- 1) 이야기형 뷰 -->
+                    <div class="concept-view concept-story-view" data-view="story" style="display:none;">
+                        <div class="story-speaker-badge">🎙️ 한강을 둘러싼 대격돌</div>
+                        <p class="story-paragraph">
+                            삼국 시대에는 한반도의 중심인 <strong>'한강 유역'</strong>을 차지한 나라가 그 시대를 호령하는 최강국이 되었어요. 기름진 평야가 있고, 서해를 통해
+                            중국과 바로 교역할 수 있었기 때문이에요.
+                        </p>
+                        <div class="story-dialogue">
+                            🌊 4세기 백제 근초고왕: "우리가 가장 먼저 한강을 차지하고 왜(일본)에 칠지도를 보냈다!"<br>
+                            🐎 5세기 고구려 광개토대왕: "만주 벌판을 달리고 아들 장수왕이 평양으로 천도하여 한강 이남까지 차지했노라!"<br>
+                            ⭐ 6세기 신라 진흥왕: "화랑도를 정비하고 한강을 차지해 삼국 통일의 튼튼한 발판을 세웠도다!"
+                        </div>
+                    </div>
+
+                    <!-- 2) 마인드맵형 뷰 -->
+                    <div class="concept-view concept-mindmap-view" data-view="mindmap" style="display:none;">
+                        <div class="mindmap-root-box">⚔️ 삼국의 전성기와 경쟁</div>
+                        <div class="mindmap-branches">
+                            <div class="mindmap-node">
+                                <div class="node-header">🏰 백제 (4세기)</div>
+                                <ul class="node-subitems">
+                                    <li><strong>근초고왕:</strong> 한강 차지, 마한 복속</li>
+                                    <li>해상 교역 활발, 왜에 <strong>칠지도</strong> 수여</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">🐎 고구려 (5세기)</div>
+                                <ul class="node-subitems">
+                                    <li><strong>광개토대왕:</strong> 만주와 요동 정복</li>
+                                    <li><strong>장수왕:</strong> 평양 천도 및 남진 정책</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">🔔 신라 (6세기)</div>
+                                <ul class="node-subitems">
+                                    <li><strong>진흥왕:</strong> 화랑도 개편, 한강 점령</li>
+                                    <li>순수비 건립 및 삼국 통일 발판 마련</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4) 핵심 요약형 뷰 -->
+                    <div class="concept-view concept-summary-view" data-view="summary" style="display:none;">
+                        <div class="point-box">
+                            <strong>💡 핵심 기억법:</strong> 삼국의 전성기 순서는 <strong>백제(4세기) ➔ 고구려(5세기) ➔ 신라(6세기)</strong> 순서예요!
+                        </div>
+                        <ul class="bullet-list">
+                            <li><strong>한강 유역:</strong> 비옥한 농토와 중국과의 교역로를 확보하기 위한 격전지였어요.</li>
+                            <li><strong>불교 수용:</strong> 백성의 사상을 통일하고 왕권을 강화하기 위해 수용했어요.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- [3단원] 통일신라와 발해 -->
+                <article class="card era-card" data-era="unit3" id="card-unit3">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">3단원</span>
+                            <span class="curriculum-std-tag">[6사04-01,6사04-02]</span>
+                            <h3 class="card-title">통일신라와 발해, 남북국의 눈부신 문화와 교류</h3>
+                        </div>
+                    </div>
+
+                    <!-- 3) 4컷 만화 뷰 -->
+                    <div class="concept-view concept-comic-view" data-view="comic">
+                        <div class="comic-img-wrapper"
+                            onclick="openRelicModal('통일신라와 발해 남북국시대 4컷 만화', '3단원: 남북국 시대', '문무왕의 삼국통일, 대조영 장군의 발해 건국, 장보고의 청해진 해상 무역까지 남북국의 당당한 역사를 그린 만화예요!', './images/comic_unit3.jpg')">
+                            <img src="./images/comic_unit3.jpg" alt="남북국 시대 4컷 만화" loading="lazy">
+                            <span class="comic-zoom-badge">🔍 터치해서 크게 보기</span>
+                        </div>
+                        <div class="comic-caption-box">
+                            <strong>💡 4컷 만화 줄거리:</strong><br>
+                            1컷: 삼국통일을 이룬 신라 문무왕과 불국사 ➔ 2컷: 고구려의 기상을 이어 만주에 발해를 세운 대조영 ➔ 3컷: 완도 청해진에서 동아시아 해상 무역을 지배한 장보고
+                            ➔ 4컷: 남과 북이 함께 빛난 자랑스러운 남북국시대!
+                        </div>
+                    </div>
+
+                    <!-- 1) 이야기형 뷰 -->
+                    <div class="concept-view concept-story-view" data-view="story" style="display:none;">
+                        <div class="story-speaker-badge">🎙️ 남쪽과 북쪽의 두 나라 이야기</div>
+                        <p class="story-paragraph">
+                            신라가 문무왕 때 삼국을 통일한 뒤, 북쪽 만주 땅에서는 고구려 장군 출신 <strong>대조영</strong>이 고구려 유민들과 함께 새로운 나라
+                            <strong>발해</strong>를 세웠어요.
+                        </p>
+                        <div class="story-dialogue">
+                            🦅 발해 대조영: "우리는 고구려의 기상을 계승한 당당한 나라다! 해동성국이라 부르라!"<br>
+                            ⚓ 신라 장보고: "완도에 청해진을 설치하여 동아시아 바다의 해적을 소탕하고 무역을 이끌겠다!"
+                        </div>
+                    </div>
+
+                    <!-- 2) 마인드맵형 뷰 -->
+                    <div class="concept-view concept-mindmap-view" data-view="mindmap" style="display:none;">
+                        <div class="mindmap-root-box">🔔 남북국 시대의 발전</div>
+                        <div class="mindmap-branches">
+                            <div class="mindmap-node">
+                                <div class="node-header">🏛️ 통일신라의 문화</div>
+                                <ul class="node-subitems">
+                                    <li><strong>불교 예술:</strong> 불국사, 석굴암, 다보탑</li>
+                                    <li><strong>해상왕 장보고:</strong> 청해진 설치, 국제 무역 선도</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">🦅 발해의 위상</div>
+                                <ul class="node-subitems">
+                                    <li><strong>대조영 건국 (698):</strong> 고구려 계승</li>
+                                    <li><strong>해동성국:</strong> 바다 동쪽의 번영한 대제국</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4) 핵심 요약형 뷰 -->
+                    <div class="concept-view concept-summary-view" data-view="summary" style="display:none;">
+                        <div class="point-box">
+                            <strong>💡 남북국이란?</strong> 남쪽의 통일신라와 북쪽의 발해가 공존했던 시대로, 우리 민족의 활동 무대가 만주까지 이어졌음을 보여줘요.
+                        </div>
+                        <ul class="bullet-list">
+                            <li><strong>통일신라:</strong> 석굴암과 불국사 등 불교 예술이 완성되었어요.</li>
+                            <li><strong>발해:</strong> 온돌과 기와 문양 등 고구려 문화를 계승한 해동성국이었어요.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- [4단원] 고려의 건국과 문화 -->
+                <article class="card era-card" data-era="unit4" id="card-unit4">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">4단원</span>
+                            <span class="curriculum-std-tag">[6사04-03]</span>
+                            <h3 class="card-title">고려의 건국, 외침 극복과 세계적 문화유산</h3>
+                        </div>
+                    </div>
+
+                    <!-- 3) 4컷 만화 뷰 -->
+                    <div class="concept-view concept-comic-view" data-view="comic">
+                        <div class="comic-img-wrapper"
+                            onclick="openRelicModal('고려의 무역과 문화유산 4컷 만화', '4단원: 고려의 문화', '벽란도에서 코리아로 알려진 사연, 서희의 외교적 승리, 팔만대장경과 세계 최초 금속활자 직지까지 한눈에 보는 4컷 만화예요!', './images/comic_unit4.jpg')">
+                            <img src="./images/comic_unit4.jpg" alt="고려의 문화 4컷 만화" loading="lazy">
+                            <span class="comic-zoom-badge">🔍 터치해서 크게 보기</span>
+                        </div>
+                        <div class="comic-caption-box">
+                            <strong>💡 4컷 만화 줄거리:</strong><br>
+                            1컷: 벽란도 무역으로 세계에 '코리아'를 알린 고려 ➔ 2컷: 말 한마디로 강동 6주를 얻어낸 외교관 서희 ➔ 3컷: 몽골 격퇴를 염원하며 새긴 팔만대장경 ➔
+                            4컷: 비취빛 상감 청자와 세계 최고의 금속활자본 직지!
+                        </div>
+                    </div>
+
+                    <!-- 1) 이야기형 뷰 -->
+                    <div class="concept-view concept-story-view" data-view="story" style="display:none;">
+                        <div class="story-speaker-badge">🎙️ 코리아(Korea)의 이름이 세계로!</div>
+                        <p class="story-paragraph">
+                            태조 왕건은 고구려를 계승한다는 뜻으로 나라 이름을 <strong>'고려'</strong>라 짓고 후삼국을 통일했어요. 국제 무역항
+                            <strong>벽란도</strong>에는 아라비아 상인들이 찾아와 향료를 사고팔며 우리나라를 '코리아(Korea)'로 전 세계에 알렸지요!
+                        </p>
+                        <div class="story-dialogue">
+                            📜 서희의 담판: "고려는 고구려의 정통 후계자다! 강동 6주를 넘겨준다면 그대들과 길을 트겠노라!"<br>
+                            🪵 팔만대장경: "부처님의 힘으로 나라를 구원하소서! 8만 1천여 장을 정성스레 판각한다!"
+                        </div>
+                    </div>
+
+                    <!-- 2) 마인드맵형 뷰 -->
+                    <div class="concept-view concept-mindmap-view" data-view="mindmap" style="display:none;">
+                        <div class="mindmap-root-box">🏺 고려의 역사와 문화</div>
+                        <div class="mindmap-branches">
+                            <div class="mindmap-node">
+                                <div class="node-header">👑 건국 & 개방</div>
+                                <ul class="node-subitems">
+                                    <li><strong>태조 왕건:</strong> 후삼국 통일</li>
+                                    <li><strong>벽란도:</strong> 'KOREA' 명칭 유래</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">⚔️ 외세 극복</div>
+                                <ul class="node-subitems">
+                                    <li><strong>서희:</strong> 외교 담판으로 강동 6주 획득</li>
+                                    <li><strong>강감찬:</strong> 귀주대첩 승리</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">✨ 빛나는 문화</div>
+                                <ul class="node-subitems">
+                                    <li><strong>팔만대장경:</strong> 몽골 침략 극복 염원</li>
+                                    <li><strong>직지 (1377):</strong> 세계 최고 금속활자본</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4) 핵심 요약형 뷰 -->
+                    <div class="concept-view concept-summary-view" data-view="summary" style="display:none;">
+                        <div class="point-box">
+                            <strong>💡 2022 개정 성취기준 핵심:</strong> 외세의 침략에 굴하지 않고 외교와 무력으로 나라를 지키며 직지와 고려청자 등 찬란한 인쇄·도자기
+                            문화를 꽃피웠어요.
+                        </div>
+                        <ul class="bullet-list">
+                            <li><strong>직지심체요절:</strong> 구텐베르크보다 앞선 세계 최고의 금속활자본이에요.</li>
+                            <li><strong>상감 청자:</strong> 독창적인 상감 기법으로 빚은 비취색 공예품이에요.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- [5단원] 조선의 건국과 과학, 국난 극복 -->
+                <article class="card era-card" data-era="unit5" id="card-unit5">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">5단원</span>
+                            <span class="curriculum-std-tag">[6사05-01, 6사05-02]</span>
+                            <h3 class="card-title">조선의 건국, 세종대왕의 애민 과학과 임진왜란 극복</h3>
+                        </div>
+                    </div>
+
+                    <!-- 3) 4컷 만화 뷰 -->
+                    <div class="concept-view concept-comic-view" data-view="comic">
+                        <div class="comic-img-wrapper"
+                            onclick="openRelicModal('조선 건국과 세종대왕, 이순신 4컷 만화', '5단원: 조선과 과학·극복', '이성계의 한양 천도, 세종대왕의 훈민정음 창제, 장영실의 앙부일구와 측우기, 이순신 장군의 거북선 활약을 담은 4컷 만화예요!', './images/comic_unit5.jpg')">
+                            <img src="./images/comic_unit5.jpg" alt="조선과 과학 극복 4컷 만화" loading="lazy">
+                            <span class="comic-zoom-badge">🔍 터치해서 크게 보기</span>
+                        </div>
+                        <div class="comic-caption-box">
+                            <strong>💡 4컷 만화 줄거리:</strong><br>
+                            1컷: 한양에 새 도읍을 정하고 조선을 세운 태조 이성계 ➔ 2컷: 백성을 사랑하는 마음으로 훈민정음을 만든 세종대왕 ➔ 3컷: 앙부일구와 측우기를 발명한 천재
+                            과학자 장영실 ➔ 4컷: 거북선으로 바다를 지킨 구국의 영웅 이순신 장군!
+                        </div>
+                    </div>
+
+                    <!-- 1) 이야기형 뷰 -->
+                    <div class="concept-view concept-story-view" data-view="story" style="display:none;">
+                        <div class="story-speaker-badge">🎙️ 백성을 사랑한 임금과 영웅들</div>
+                        <p class="story-paragraph">
+                            이성계는 한양(서울)에 새 나라 <strong>조선</strong>을 건국했어요. 4대 임금인 <strong>세종대왕</strong>은 백성을 사랑하는 마음이 깊어
+                            집현전 학자들과 함께 위대한 업적을 남기셨지요.
+                        </p>
+                        <div class="story-dialogue">
+                            👑 세종대왕: "글을 몰라 억울한 일을 당하는 백성이 없도록 쉽고 아름다운 우리글 <strong>훈민정음</strong>을 만드노라!"<br>
+                            ⚙️ 장영실: "비를 재는 측우기, 해시계 앙부일구, 물시계 자격루를 바칩니다!"<br>
+                            🐢 이순신 장군: "신에게는 아직 열두 척의 배가 남아 있사옵니다. 바다를 지켜 나라를 구하겠나이다!"
+                        </div>
+                    </div>
+
+                    <!-- 2) 마인드맵형 뷰 -->
+                    <div class="concept-view concept-mindmap-view" data-view="mindmap" style="display:none;">
+                        <div class="mindmap-root-box">📜 유교와 과학의 조선</div>
+                        <div class="mindmap-branches">
+                            <div class="mindmap-node">
+                                <div class="node-header">👑 조선 건국 & 한양</div>
+                                <ul class="node-subitems">
+                                    <li>태조 이성계와 정도전 (1392)</li>
+                                    <li>경복궁과 4대문 건립</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">💡 세종의 과학 & 한글</div>
+                                <ul class="node-subitems">
+                                    <li><strong>훈민정음 (1443):</strong> 독창적 표음문자</li>
+                                    <li><strong>앙부일구 & 측우기:</strong> 백성 농사 지원</li>
+                                </ul>
+                            </div>
+                            <div class="mindmap-node">
+                                <div class="node-header">⚔️ 임진왜란 극복</div>
+                                <ul class="node-subitems">
+                                    <li><strong>이순신 장군:</strong> 거북선, 한산도·명량대첩</li>
+                                    <li><strong>의병의 항쟁:</strong> 관군과 백성의 결속</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4) 핵심 요약형 뷰 -->
+                    <div class="concept-view concept-summary-view" data-view="summary" style="display:none;">
+                        <div class="point-box">
+                            <strong>💡 2022 개정 성취기준 핵심:</strong> 세종 대의 과학과 훈민정음은 백성을 위한 애민 정신에서 탄생했으며, 임진왜란은 이순신과 의병이 함께
+                            극복했어요.
+                        </div>
+                        <ul class="bullet-list">
+                            <li><strong>훈민정음:</strong> 발음 기관의 상형 원리를 적용한 유네스코 세계기록유산이에요.</li>
+                            <li><strong>임진왜란 승리 요인:</strong> 수군의 제해권 장악과 전국 의병들의 지형 활용 유격전.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- =======================================================
+           탭 2: 단원별 영상·유물관 (오류 방지 및 바로보기 지원)
+           ======================================================= -->
+            <section class="tab-content" id="tab-media" role="tabpanel">
+
+                <!-- [1단원 미디어] 고조선 -->
+                <article class="card era-card" data-era="unit1">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">1단원 미디어관</span>
+                            <h3 class="card-title">고조선의 대표 유물과 영상 학습</h3>
+                        </div>
+                    </div>
+
+                    <div class="media-study-section">
+                        <div class="media-section-title">
+                            <span>🎬</span> 1단원 핵심 추천 영상 학습
+                        </div>
+                        <div class="cbe-media-card">
+                            <div class="cbe-media-top">
+                                <div class="cbe-tag-group">
+                                    <span class="cbe-tag-main">🏛️ 충북 다채움 공식 인증</span>
+                                </div>
+                                <span class="cbe-notice-tip">💡 학교 컴퓨터·크롬북 안전 재생</span>
+                            </div>
+                            <div class="cbe-content-box">
+                                <div class="cbe-content-title">
+                                    <span>📺</span> 고조선의 건국과 단군신화 이야기
+                                </div>
+                                <p class="cbe-content-desc">
+                                    환웅과 웅녀의 단군신화 이야기와 청동기 문화를 바탕으로 세워진 우리나라 최초의 국가, 고조선의 건국 이념인 '홍익인간'을 충북 다채움에서 생생하게
+                                    시청해 보세요!
+                                </p>
+                            </div>
+                            <div class="cbe-actions-container">
+                                <div class="cbe-buttons-group">
+                                    <a href="https://class.cbe.go.kr/ebs/prg/cntnts/cntntsView.do?cntntsId=CNTNTS_0000000059690&amp;listType=mainSearch&amp;searchKeyword=%EA%B3%A0%EC%A1%B0%EC%84%A0"
+                                        target="_blank" rel="noopener noreferrer" class="cbe-primary-btn">
+                                        <span>▶️</span>
+                                        <span>충북 다채움 영상 학습관 바로보기</span>
+                                    </a>
+                                </div>
+                                <div class="cbe-login-guide">
+                                    <span>💡</span>
+                                    <span><strong>영상 시청 안내:</strong> 위 바로보기 버튼을 누른 후 <strong>충북 다채움에 로그인</strong>하시면 고화질
+                                        다채움 학습 영상이 바로 재생됩니다! (학교 계정 또는 다채움 아이디)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="media-section-title" style="margin-top: 24px;">
+                            <span>📸</span> 대표 유물 돋보기
+                        </div>
+                        <div class="relic-images-grid">
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('비파형 동검', '고조선 청동기 대표 무기', '비파라는 현악기의 곡선 날을 닮아 비파형 동검이라 불러요. 만주와 한반도 북부 전역에서 출토되어 고조선의 강력한 군사력과 독자적인 청동기 문화 영역을 입증해 주는 대표 유물입니다.', './images/relic_donggeom.jpg', '[비파형 동검] 한국민족문화대백과사전, 공공누리 제 1유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_donggeom.jpg" alt="비파형 동검"
+                                        onerror="handleImgError(this, '🗡️', '비파형 동검')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span class="badge-icon">🗡️</span><span>비파형
+                                            동검</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">비파형 동검</div>
+                                    <div class="relic-std">고조선 청동기 대표 무기</div>
+                                    <p class="relic-desc">곡선 날이 인상적인 고조선의 상징 칼</p>
+                                    <div class="relic-source-tag">🏛️ 출처: [비파형 동검] 한국민족문화대백과사전, 공공누리 제 1유형</div>
+                                </div>
+                            </div>
+
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('철원지석묘군', '청동기 시대 탁자식 고인돌', '강원특별자치도 철원에 위치한 대표적인 탁자식(북방식) 고인돌이에요. 거대한 판석을 괴고 그 위에 넓은 덮개돌을 얹은 형태로, 청동기 시대 지배자의 강력한 권력과 사회 모습을 생생하게 보여줍니다.', './images/relic_dolmen.jpg', '[철원지석묘군] 한국민족문화대백과사전, 공공누리 제 1유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_dolmen.jpg" alt="철원지석묘군 고인돌"
+                                        onerror="handleImgError(this, '🪨', '철원지석묘군')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span
+                                            class="badge-icon">🪨</span><span>철원지석묘군</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">철원지석묘군</div>
+                                    <div class="relic-std">청동기 시대 탁자식(북방식) 고인돌</div>
+                                    <p class="relic-desc">판석을 세우고 넓은 덮개돌을 얹은 청동기 지배자의 무덤</p>
+                                    <div class="relic-source-tag">🏛️ 출처: [철원지석묘군] 한국민족문화대백과사전, 공공누리 제 1유형</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- [2단원 미디어] 삼국 시대 -->
+                <article class="card era-card" data-era="unit2">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">2단원 미디어관</span>
+                            <h3 class="card-title">삼국의 찬란한 유물과 대외 교류 영상 학습</h3>
+                        </div>
+                    </div>
+
+                    <div class="media-study-section">
+                        <div class="media-section-title">
+                            <span>🎬</span> 2단원 핵심 추천 영상 학습
+                        </div>
+                        <div class="cbe-media-card">
+                            <div class="cbe-media-top">
+                                <div class="cbe-tag-group">
+                                    <span class="cbe-tag-main">🏛️ 충북 다채움 공식 인증</span>
+                                </div>
+                                <span class="cbe-notice-tip">💡 학교 컴퓨터·크롬북 안전 재생</span>
+                            </div>
+                            <div class="cbe-content-box">
+                                <div class="cbe-content-title">
+                                    <span>📺</span> 삼국의 발전과 문화재 탐험
+                                </div>
+                                <p class="cbe-content-desc">
+                                    한강 유역을 둘러싼 고구려·백제·신라의 전성기와 찬란한 불교 문화, 신라 첨성대와 백제 금동대향로 등 삼국의 눈부신 문화재를 충북 다채움에서
+                                    만나보세요!
+                                </p>
+                            </div>
+                            <div class="cbe-actions-container">
+                                <div class="cbe-buttons-group">
+                                    <a href="https://class.cbe.go.kr/ebs/prg/cntnts/cntntsView.do?cntntsId=CNTNTS_0000000059924&amp;listType=mainSearch"
+                                        target="_blank" rel="noopener noreferrer" class="cbe-primary-btn">
+                                        <span>▶️</span>
+                                        <span>충북 다채움 영상 학습관 바로보기</span>
+                                    </a>
+                                </div>
+                                <div class="cbe-login-guide">
+                                    <span>💡</span>
+                                    <span><strong>영상 시청 안내:</strong> 위 바로보기 버튼을 누른 후 <strong>충북 다채움에 로그인</strong>하시면 고화질
+                                        다채움 학습 영상이 바로 재생됩니다! (학교 계정 또는 다채움 아이디)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="media-section-title" style="margin-top: 24px;">
+                            <span>📸</span> 대표 유물 돋보기
+                        </div>
+                        <div class="relic-images-grid">
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('백제 금동대향로', '국보 제287호 (백제 6세기)', '부여 능산리 절터에서 진흙 속에 파묻혀 온전한 모습으로 발굴된 백제 최고의 보물입니다. 향로 뚜껑에는 봉황과 다섯 악사, 상상의 동물과 산들이 정교하게 새겨져 있고, 받침은 용이 향로를 떠받치는 신비로운 형상이에요.', './images/relic_hyangno.png', '국립중앙박물관, 「백제 금동대향로」, 국립부여박물관 소장, 공공누리 제1유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_hyangno.png" alt="백제 금동대향로"
+                                        onerror="handleImgError(this, '🐉', '백제 금동대향로')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span class="badge-icon">🐉</span><span>백제
+                                            금동대향로</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">백제 금동대향로</div>
+                                    <div class="relic-std">백제 금속 공예의 최고봉</div>
+                                    <p class="relic-desc">봉황과 용, 악사가 살아 숨 쉬는 신비로운 향로</p>
+                                    <div class="relic-source-tag">🏛️ 출처: 국립중앙박물관, 「백제 금동대향로」, 국립부여박물관 소장, 공공누리 제1유형
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('경주 첨성대', '국보 제31호 (신라 선덕여왕)', '동양에서 가장 오래된 천문 관측 시설이에요. 약 365개의 화강암 돌을 27단으로 정교하게 쌓아 1년 날수와 절기를 상징하며, 별자리와 날씨를 살펴 농민들에게 씨 뿌릴 시기를 알려주었습니다.', './images/relic_cheomseongdae.jpg', '[첨성대] 한국민족문화대백과사전, 공공누리 제 1유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_cheomseongdae.jpg" alt="경주 첨성대"
+                                        onerror="handleImgError(this, '🔭', '경주 첨성대')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span class="badge-icon">🔭</span><span>경주
+                                            첨성대</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">경주 첨성대</div>
+                                    <div class="relic-std">동양 최고의 천문대</div>
+                                    <p class="relic-desc">선덕여왕 때 농사와 별자리를 살피던 건축물</p>
+                                    <div class="relic-source-tag">🏛️ 출처: [첨성대] 한국민족문화대백과사전, 공공누리 제 1유형</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- [3단원 미디어] 통일신라와 발해 -->
+                <article class="card era-card" data-era="unit3">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">3단원 미디어관</span>
+                            <h3 class="card-title">통일신라와 발해의 눈부신 문화와 교류 영상 학습</h3>
+                        </div>
+                    </div>
+
+                    <div class="media-study-section">
+                        <div class="media-section-title">
+                            <span>🎬</span> 3단원 핵심 추천 영상 학습
+                        </div>
+                        <div class="cbe-media-card">
+                            <div class="cbe-media-top">
+                                <div class="cbe-tag-group">
+                                    <span class="cbe-tag-main">🏛️ 충북 다채움 공식 인증</span>
+                                </div>
+                                <span class="cbe-notice-tip">💡 학교 컴퓨터·크롬북 안전 재생</span>
+                            </div>
+                            <div class="cbe-content-box">
+                                <div class="cbe-content-title">
+                                    <span>📺</span> 남북국 시대: 통일신라와 해동성국 발해의 기상
+                                </div>
+                                <p class="cbe-content-desc">
+                                    문무왕의 삼국 통일과 불국사·석굴암의 위대한 불교 예술, 장보고의 청해진 해상 무역과 고구려를 계승한 해동성국 발해의 광활한 역사를 충북 다채움에서
+                                    확인하세요!
+                                </p>
+                            </div>
+                            <div class="cbe-actions-container">
+                                <div class="cbe-buttons-group">
+                                    <a href="https://class.cbe.go.kr/ebs/prg/cntnts/cntntsView.do?cntntsId=CNTNTS_0000000040035&amp;listType=mainSearch"
+                                        target="_blank" rel="noopener noreferrer" class="cbe-primary-btn">
+                                        <span>▶️</span>
+                                        <span>충북 다채움 영상 학습관 바로보기</span>
+                                    </a>
+                                </div>
+                                <div class="cbe-login-guide">
+                                    <span>💡</span>
+                                    <span><strong>영상 시청 안내:</strong> 위 바로보기 버튼을 누른 후 <strong>충북 다채움에 로그인</strong>하시면 고화질
+                                        다채움 학습 영상이 바로 재생됩니다! (학교 계정 또는 다채움 아이디)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="media-section-title" style="margin-top: 24px;">
+                            <span>📸</span> 대표 유물 돋보기
+                        </div>
+                        <div class="relic-images-grid">
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('경주 불국사 다보탑 (서면)', '국보 제20호 (통일신라 8세기)', '불국사 대웅전 앞뜰에 서 있는 통일신라 석탑 예술의 정수예요. 복잡하고 화려한 기하학적 형태를 화강암을 깎아 완벽한 비례로 조화시킨 걸작이며, 서면 기단 위에는 홀로 탑을 지키는 돌사자상이 함께 남아 있습니다.', './images/relic_dabotap.jpg', '[경주불국사다보탑서면] 한국민족문화대백과사전, 공공누리 제 1유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_dabotap.jpg" alt="불국사 다보탑 서면"
+                                        onerror="handleImgError(this, '🏛️', '불국사 다보탑')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span class="badge-icon">🏛️</span><span>불국사
+                                            다보탑</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">불국사 다보탑 (서면)</div>
+                                    <div class="relic-std">통일신라 최고의 석조 예술</div>
+                                    <p class="relic-desc">화강암을 섬세하게 다듬은 유네스코 세계문화유산</p>
+                                    <div class="relic-source-tag">🏛️ 출처: [경주불국사다보탑서면] 한국민족문화대백과사전, 공공누리 제 1유형</div>
+                                </div>
+                            </div>
+
+                            <div class="relic-img-card" style="cursor:default">
+                                <div class="relic-link-art" aria-hidden="true">🪔</div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">발해 석등</div>
+                                    <div class="relic-std">해동성국 발해의 웅장한 기상</div>
+                                    <p class="relic-desc">고구려의 양식을 계승한 발해의 대표 조각 유물</p>
+                                    <div style="margin-top: 6px;">
+                                        <a href="https://terms.naver.com/%ED%95%9C%EA%B5%AD-%EC%97%AD%EC%82%AC-%EB%AC%B8%ED%99%94/%EB%B0%9C%ED%95%B4%EC%8B%9C%EB%8C%80%EC%9D%98-%EC%84%9D%EB%93%B1-3fXXnWp4M4jOCiO4xO8eS4"
+                                            target="_blank" rel="noopener noreferrer" class="relic-direct-link"
+                                            onclick="event.stopPropagation()">
+                                            <span>📖</span>
+                                            <span>네이버 지식백과 사진·해설 바로보기 ↗</span>
+                                        </a>
+                                    </div>
+                                    <div class="relic-source-tag">🏛️ 출처: 네이버 지식백과, 「발해시대의 석등」</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- [4단원 미디어] 고려의 문화 -->
+                <article class="card era-card" data-era="unit4">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">4단원 미디어관</span>
+                            <h3 class="card-title">고려의 세계적인 문화유산과 대외 교류 영상 학습</h3>
+                        </div>
+                    </div>
+
+                    <div class="media-study-section">
+                        <div class="media-section-title">
+                            <span>🎬</span> 4단원 핵심 추천 영상 학습
+                        </div>
+                        <div class="cbe-media-card">
+                            <div class="cbe-media-top">
+                                <div class="cbe-tag-group">
+                                    <span class="cbe-tag-main">🏛️ 충북 다채움 공식 인증</span>
+                                </div>
+                                <span class="cbe-notice-tip">💡 학교 컴퓨터·크롬북 안전 재생</span>
+                            </div>
+                            <div class="cbe-content-box">
+                                <div class="cbe-content-title">
+                                    <span>📺</span> 고려의 건국과 외침 극복, 세계를 놀라게 한 문화유산
+                                </div>
+                                <p class="cbe-content-desc">
+                                    국제 무역항 벽란도로 '코리아(Korea)'를 알린 고려! 서희의 외교 담판과 몽골에 맞선 팔만대장경, 비취빛 상감 청자와 금속활자본 직지의 위대함을
+                                    충북 다채움에서 만나보세요!
+                                </p>
+                            </div>
+                            <div class="cbe-actions-container">
+                                <div class="cbe-buttons-group">
+                                    <a href="https://class.cbe.go.kr/ebs/prg/cntnts/cntntsView.do?cntntsId=CNTNTS_0000000079243&amp;listType=mainSearch"
+                                        target="_blank" rel="noopener noreferrer" class="cbe-primary-btn">
+                                        <span>▶️</span>
+                                        <span>충북 다채움 영상 학습관 바로보기</span>
+                                    </a>
+                                </div>
+                                <div class="cbe-login-guide">
+                                    <span>💡</span>
+                                    <span><strong>영상 시청 안내:</strong> 위 바로보기 버튼을 누른 후 <strong>충북 다채움에 로그인</strong>하시면 고화질
+                                        다채움 학습 영상이 바로 재생됩니다! (학교 계정 또는 다채움 아이디)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="media-section-title" style="margin-top: 24px;">
+                            <span>📸</span> 대표 유물 돋보기
+                        </div>
+                        <div class="relic-images-grid">
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('청자 상감운학문 매병', '국보 제68호 (고려 12세기)', '고려 도공들이 세계 최초로 개발한 독창적인 상감 기법(흙을 파내고 백토와 흑토를 채워 무늬를 내는 기술)으로 빚은 도자기예요. 맑은 비취색 유약 속에 학들이 구름 사이를 날아오르는 평화로운 이상 세계를 표현했습니다.', './images/relic_celadon.jpg', '[청자 상감운학문 매병] 한국민족문화대백과사전, 공공누리 제 0유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_celadon.jpg" alt="청자 상감운학문 매병"
+                                        onerror="handleImgError(this, '🍶', '상감운학문 매병')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span class="badge-icon">🍶</span><span>상감운학문
+                                            매병</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">청자 상감운학문 매병</div>
+                                    <div class="relic-std">고려 비취빛 도자기 예술</div>
+                                    <p class="relic-desc">구름과 학이 수놓아진 고려의 대표 예술품</p>
+                                    <div class="relic-source-tag">🏛️ 출처: [청자 상감운학문 매병] 한국민족문화대백과사전, 공공누리 제 0유형</div>
+                                </div>
+                            </div>
+
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('합천 해인사 팔만대장경판', '국보 제32호 · 유네스코 세계기록유산', '몽골의 침략을 부처님의 힘으로 막아내고자 16년에 걸쳐 정성을 다해 한 글자 한 글자 새긴 8만 1,258장의 목판이에요. 글자 하나하나가 한 사람이 쓴 것처럼 정교하며 지금까지 뒤틀림 없이 완벽히 보존되어 있습니다.', './images/relic_tripitaka.jpg', '국립중앙박물관 소장 조선총독부박물관 유리건판 저작물, 공공누리 제2유형 / Arian Zwegers, CC BY 2.0')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_tripitaka.jpg" alt="팔만대장경판"
+                                        onerror="handleImgError(this, '🪵', '팔만대장경판')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span
+                                            class="badge-icon">🪵</span><span>팔만대장경판</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">팔만대장경판</div>
+                                    <div class="relic-std">호국 염원이 담긴 세계기록유산</div>
+                                    <p class="relic-desc">몽골 침략을 극복하기 위해 만든 8만여 목판</p>
+                                    <div class="relic-source-tag">🏛️ 출처: 국립중앙박물관 유리건판 저작물, 공공누리 제2유형 [팔만대장경] (CC BY
+                                        2.0)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- [5단원 미디어] 조선과 과학, 국난 극복 -->
+                <article class="card era-card" data-era="unit5">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">5단원 미디어관</span>
+                            <h3 class="card-title">조선의 과학 기술과 훈민정음 영상 학습</h3>
+                        </div>
+                    </div>
+
+                    <div class="media-study-section">
+                        <div class="media-section-title">
+                            <span>🎬</span> 5단원 핵심 추천 영상 학습
+                        </div>
+                        <div class="cbe-media-card">
+                            <div class="cbe-media-top">
+                                <div class="cbe-tag-group">
+                                    <span class="cbe-tag-main">🏛️ 충북 다채움 공식 인증</span>
+                                </div>
+                                <span class="cbe-notice-tip">💡 학교 컴퓨터·크롬북 안전 재생</span>
+                            </div>
+                            <div class="cbe-content-box">
+                                <div class="cbe-content-title">
+                                    <span>📺</span> 조선의 건국, 세종대왕의 과학 발명과 한글 창제
+                                </div>
+                                <p class="cbe-content-desc">
+                                    백성을 사랑하는 마음으로 훈민정음을 만든 세종대왕, 장영실의 자격루와 앙부일구, 그리고 임진왜란에서 나라를 구한 이순신 장군의 거북선 활약을 충북
+                                    다채움에서 확인해 보세요!
+                                </p>
+                            </div>
+                            <div class="cbe-actions-container">
+                                <div class="cbe-buttons-group">
+                                    <a href="https://class.cbe.go.kr/ebs/prg/cntnts/cntntsView.do?cntntsId=CNTNTS_0000000079244&amp;listType=mainSearch&amp;searchKeyword=%EC%A1%B0%EC%84%A0"
+                                        target="_blank" rel="noopener noreferrer" class="cbe-primary-btn">
+                                        <span>▶️</span>
+                                        <span>충북 다채움 영상 학습관 바로보기</span>
+                                    </a>
+                                </div>
+                                <div class="cbe-login-guide">
+                                    <span>💡</span>
+                                    <span><strong>영상 시청 안내:</strong> 위 바로보기 버튼을 누른 후 <strong>충북 다채움에 로그인</strong>하시면 고화질
+                                        다채움 학습 영상이 바로 재생됩니다! (학교 계정 또는 다채움 아이디)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="media-section-title" style="margin-top: 24px;">
+                            <span>📸</span> 대표 유물 돋보기
+                        </div>
+                        <div class="relic-images-grid">
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('훈민정음 해례본', '국보 제70호 · 유네스코 세계기록유산', '1446년 세종 28년에 발간된 책으로, 세종대왕이 한글을 왜 만들었는지와 정인지 등 집현전 학자들이 한글 자음·모음 스물여덟 자의 과학적 발음 원리를 상세히 설명해 둔 인류 문자 역사상 최고의 걸작입니다.', './images/relic_hunmin.jpg', '[훈민정음] 한국민족문화대백과사전, 공공누리 제 1유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_hunmin.jpg" alt="훈민정음 해례본"
+                                        onerror="handleImgError(this, '📖', '훈민정음 해례본')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span class="badge-icon">📖</span><span>훈민정음
+                                            해례본</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">훈민정음 해례본</div>
+                                    <div class="relic-std">세계 유네스코 기록유산</div>
+                                    <p class="relic-desc">한글의 창제 원리가 적힌 자랑스러운 우리글 책</p>
+                                    <div class="relic-source-tag">🏛️ 출처: [훈민정음] 한국민족문화대백과사전, 공공누리 제 1유형</div>
+                                </div>
+                            </div>
+
+                            <div class="relic-img-card"
+                                onclick="openRelicModal('앙부일구 (오목 해시계)', '보물 제845호 (조선 세종)', '가마솥 모양의 오목한 청동 그릇에 영침의 그림자가 비치도록 만든 해시계예요. 글을 모르는 일반 백성들도 시간을 알 수 있도록 12지신 동물 그림으로 시각을 표시한 세종대왕의 백성 사랑이 담긴 걸작입니다.', './images/relic_angbuilgu.jpg', '[앙부일구] 한국민족문화대백과사전, 공공누리 제 1유형')">
+                                <div class="relic-img-frame">
+                                    <img src="./images/relic_angbuilgu.jpg" alt="앙부일구 해시계"
+                                        onerror="handleImgError(this, '☀️', '앙부일구 해시계')" loading="lazy">
+                                    <div class="relic-fallback-badge"><span class="badge-icon">☀️</span><span>앙부일구
+                                            해시계</span></div>
+                                    <span class="relic-zoom-hint">🔍 크게보기</span>
+                                </div>
+                                <div class="relic-card-body">
+                                    <div class="relic-name">앙부일구 (해시계)</div>
+                                    <div class="relic-std">백성을 위한 조선의 과학 발명품</div>
+                                    <p class="relic-desc">그림자로 시간과 절기를 알려주던 오목 해시계</p>
+                                    <div class="relic-source-tag">🏛️ 출처: [앙부일구] 한국민족문화대백과사전, 공공누리 제 1유형</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- =======================================================
+           탭 3: 역사 인물전
+           ======================================================= -->
+            <section class="tab-content" id="tab-figures" role="tabpanel">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="card-tag">역사 영웅전</span>
+                            <h3 class="card-title">2022 개정 교육과정 속 핵심 인물들을 만나요</h3>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div
+                            style="background: var(--color-primary-soft); border: 1.5px solid var(--border-warm); border-radius: var(--radius-md); padding: 18px;">
+                            <h4 style="color: #92400E; font-size: 1.15rem; margin-bottom: 6px;">🐎 광개토대왕 (고구려 제19대 왕)
+                            </h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">
+                                "만주 벌판을 말을 타고 달리며 영토를 크게 넓힌 정복 군주예요! 아들 장수왕이 세운 <strong>광개토대왕릉비</strong>에 그의 위대한 업적이
+                                생생하게 기록되어 있답니다."
+                            </p>
+                        </div>
+
+                        <div
+                            style="background: #FFF; border: 1.5px solid var(--border-warm); border-radius: var(--radius-md); padding: 18px;">
+                            <h4 style="color: #92400E; font-size: 1.15rem; margin-bottom: 6px;">🌊 해상왕 장보고 (신라)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">
+                                "완도에 <strong>청해진</strong>을 설치하여 해적을 소탕하고 당나라, 신라, 일본을 잇는 동아시아 바다 무역을 지배한 위대한 바다의 왕이었어요."
+                            </p>
+                        </div>
+
+                        <div
+                            style="background: var(--color-primary-soft); border: 1.5px solid var(--border-warm); border-radius: var(--radius-md); padding: 18px;">
+                            <h4 style="color: #92400E; font-size: 1.15rem; margin-bottom: 6px;">📜 외교관 서희 (고려)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">
+                                "거란 장수 소손녕과의 당당한 <strong>말 한마디 외교 담판</strong>으로 피 한 방울 흘리지 않고 거란군을 물리치고 압록강 주변
+                                <strong>강동 6주</strong> 땅까지 얻어냈어요!"
+                            </p>
+                        </div>
+
+                        <div
+                            style="background: #FFF; border: 1.5px solid var(--border-warm); border-radius: var(--radius-md); padding: 18px;">
+                            <h4 style="color: #92400E; font-size: 1.15rem; margin-bottom: 6px;">👑 세종대왕 (조선 제4대 왕)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6;">
+                                "글을 몰라 억울한 일을 당하는 백성을 위해 누구나 하루 만에 깨칠 수 있는 <strong>훈민정음</strong>을 만들고 집현전 학자들과 과학·음악·의학을
+                                크게 발전시켰어요."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =======================================================
+           탭 4: 스스로 퀴즈 (단원별 복습 & 무작위 랜덤 출제)
+           ======================================================= -->
+            <section class="tab-content" id="tab-quiz" role="tabpanel">
+                <div class="quiz-container" id="quiz-wrapper">
+
+                    <!-- 단원 선택 모드 탭 (복습하고 싶은 단원 선택) -->
+                    <div class="quiz-mode-nav" id="quizModeNav" role="tablist" aria-label="퀴즈 단원 선택">
+                        <button type="button" class="quiz-mode-btn active" data-unit="all"
+                            onclick="selectQuizMode('all')">
+                            <span>🌟</span> 전체 단원 종합 랜덤 (5문제)
+                        </button>
+                        <button type="button" class="quiz-mode-btn" data-unit="unit1" onclick="selectQuizMode('unit1')">
+                            <span>🏛️</span> 1단원: 고조선의 건국
+                        </button>
+                        <button type="button" class="quiz-mode-btn" data-unit="unit2" onclick="selectQuizMode('unit2')">
+                            <span>⚔️</span> 2단원: 삼국의 전성기
+                        </button>
+                        <button type="button" class="quiz-mode-btn" data-unit="unit3" onclick="selectQuizMode('unit3')">
+                            <span>👑</span> 3단원: 남북국 시대
+                        </button>
+                        <button type="button" class="quiz-mode-btn" data-unit="unit4" onclick="selectQuizMode('unit4')">
+                            <span>🍶</span> 4단원: 고려의 문화
+                        </button>
+                        <button type="button" class="quiz-mode-btn" data-unit="unit5" onclick="selectQuizMode('unit5')">
+                            <span>📜</span> 5단원: 조선과 과학
+                        </button>
+                    </div>
+
+                    <div class="quiz-header">
+                        <div class="quiz-badge">
+                            <span>🎯</span> <span id="quiz-mode-title">전체 단원 종합 퀴즈</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="quiz-shuffle-tag">🎲 매번 무작위 출제</span>
+                            <div class="quiz-score-badge" id="quiz-progress-text">
+                                문제 1 / 5
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-track" aria-hidden="true">
+                        <div class="progress-fill" id="quiz-progress-bar"></div>
+                    </div>
+
+                    <!-- 동적 문제 마운트 컨테이너 (JS에서 매번 랜덤 생성) -->
+                    <div id="quiz-cards-mount"></div>
+
+                    <div class="quiz-actions" id="quiz-actions-bar">
+                        <button type="button" class="quiz-nav-btn" id="next-q-btn" onclick="goToNextQuestion()"
+                            disabled>
+                            <span>다음 문제로 풀기</span>
+                            <span>👉</span>
+                        </button>
+                    </div>
+
+                    <div class="quiz-result-view" id="quiz-result-view">
+                        <div class="stamp-badge">💮</div>
+                        <h3 class="result-title">역사 탐험 완료!</h3>
+                        <p class="result-score">나의 점수: <span id="final-score-display">100</span>점</p>
+                        <p class="result-comment" id="final-comment-display">우리 역사를 정말 훌륭하게 마스터했군요!</p>
+                        <section class="certificate-entry" id="certificate-entry" hidden>
+<h4>🏅 단원 학습 완료 인증서</h4><p id="certificate-unit-label"></p>
+<label for="certificate-name">인증서에 넣을 이름 또는 별명</label><input id="certificate-name" type="text" maxlength="20" autocomplete="off" spellcheck="false" placeholder="이름 또는 별명 (최대 20자)">
+<div style="margin-top:12px"><button type="button" class="feature-btn" id="issue-certificate">인증서 발급받기</button></div>
+<p id="certificate-error" role="status"></p><p class="privacy-note">이 페이지는 인증서에 입력한 이름을 수집·전송·보관하지 않습니다. 이름은 현재 화면에서 인증서를 만드는 데만 사용하며, 인증서 창을 닫거나 단원을 바꾸면 지워집니다.</p></section>
+<div class="quiz-result-btns">
+                            <button type="button" class="restart-btn" onclick="restartQuiz(true)">
+                                <span>🎲</span>
+                                <span>새로운 랜덤 문제로 풀기</span>
+                            </button>
+                            <button type="button" class="restart-btn-secondary" onclick="focusQuizModes()">
+                                <span>📚</span>
+                                <span>다른 단원 선택하기</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 확대 모달 창 (4컷 만화 & 유물 상세 팝업) -->
+        <div class="image-modal-overlay" id="relicModal" onclick="closeRelicModal(event)">
+            <div class="image-modal-content" onclick="event.stopPropagation()">
+                <button type="button" class="modal-close-btn" onclick="closeRelicModal()" aria-label="닫기">✕</button>
+                <div class="modal-img-wrap">
+                    <img id="modalImg" src="" alt="상세 확대 이미지">
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-relic-title" id="modalTitle">상세 제목</h4>
+                    <div class="modal-relic-era" id="modalEra">시대 정보</div>
+                    <div class="modal-relic-docent" id="modalDocent">설명</div>
+                    <div class="modal-relic-source" id="modalSource" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <footer>
+            <p class="footer-note">🎒 2022 개정 교육과정 초등 사회과 한국사 교실</p>
+            <p>© 2026 초등 한국사 탐험대. 언제나 즐거운 배움을 응원합니다!</p>
+        </footer>
+
+    </div>
+
+    <script>
+// All certificate data stays in memory; no names are written to browser storage or sent anywhere.
+const unitLabels={unit1:'1단원 · 고조선의 시작',unit2:'2단원 · 삼국의 발전',unit3:'3단원 · 통일신라와 발해',unit4:'4단원 · 고려의 문화',unit5:'5단원 · 조선과 과학·극복',all:'전체 단원 종합 탐험'};
+let certificateUnit=null, certificateDate='', certificateReturnFocus=null;
+const certDialog=document.getElementById('certificate-dialog');
+function resetCertificate(){
+ document.getElementById('certificate-entry').hidden=true;
+ document.getElementById('certificate-name').value='';
+ document.getElementById('certificate-error').textContent='';
+ certificateUnit=null;
+ document.getElementById('certificate-preview').setAttribute('aria-label','인증서 미리보기');
+ document.getElementById('certificate-preview').getContext('2d').clearRect(0,0,1600,1100);
+}
+function showCertificateEntry(){
+ certificateUnit=currentQuizMode;
+ document.getElementById('certificate-entry').hidden=false;
+ document.getElementById('certificate-unit-label').textContent=unitLabels[certificateUnit]+' 퀴즈를 끝냈어요! 도전한 나를 칭찬해요.';
+}
+function closeCertificate(){certDialog.close();document.getElementById('certificate-preview').setAttribute('aria-label','인증서 미리보기');document.getElementById('certificate-name').value='';document.getElementById('certificate-preview').getContext('2d').clearRect(0,0,1600,1100);if(certificateReturnFocus)certificateReturnFocus.focus();}
+function drawCertificate(name){
+ const c=document.getElementById('certificate-preview'),x=c.getContext('2d');
+ x.fillStyle='#fffcf2';x.fillRect(0,0,1600,1100);x.strokeStyle='#b78b38';x.lineWidth=8;x.strokeRect(45,45,1510,1010);x.lineWidth=2;x.strokeRect(65,65,1470,970);
+ x.textAlign='center';x.fillStyle='#8c6422';x.font='28px "Noto Sans KR",sans-serif';x.fillText('신나는 초등 한국사 탐험대',800,160);
+ x.fillStyle='#3f3320';x.font='bold 76px "Noto Sans KR",sans-serif';x.fillText('역사 탐험 완료 인증서',800,295);
+ x.fillStyle='#a77928';x.font='bold 36px "Noto Sans KR",sans-serif';x.fillText(unitLabels[certificateUnit],800,400);
+ x.fillStyle='#263448';let size=70;do{x.font=`bold ${size--}px "Noto Sans KR",sans-serif`;}while(x.measureText(name+' 탐험가').width>1300&&size>28);x.fillText(name+' 탐험가',800,560);
+ x.font='32px "Noto Sans KR",sans-serif';x.fillText('우리 역사를 배우고 단원 퀴즈를 끝까지 마쳤기에',800,675);x.fillText('꾸준한 도전과 배움의 마음을 담아 이 인증서를 드립니다.',800,735);
+ x.fillStyle='#695d4a';x.font='28px "Noto Sans KR",sans-serif';x.fillText(certificateDate,800,855);x.font='bold 32px "Noto Sans KR",sans-serif';x.fillText('역사를 알아가는 오늘, 한 뼘 더 자란 나!',800,935);
+ c.setAttribute('aria-label',name+' 탐험가의 '+unitLabels[certificateUnit]+' 완료 인증서, '+certificateDate);
+}
+document.getElementById('issue-certificate').onclick=async()=>{
+ const input=document.getElementById('certificate-name'),name=input.value.trim();
+ if(!certificateUnit||!name){document.getElementById('certificate-error').textContent='이름이나 별명을 입력해 주세요.';input.focus();return;}
+ certificateDate=new Date().toLocaleDateString('ko-KR');certificateReturnFocus=document.getElementById('issue-certificate');
+ if(document.fonts)await document.fonts.ready;
+ drawCertificate(name);certDialog.showModal();
+};
+document.getElementById('close-certificate').onclick=closeCertificate;
+certDialog.addEventListener('cancel',e=>{e.preventDefault();closeCertificate();});
+document.getElementById('save-certificate').onclick=()=>{
+ document.getElementById('certificate-preview').toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='한국사_탐험_인증서_'+certificateUnit+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);},'image/png');
+};
+document.getElementById('print-certificate').onclick=()=>window.print();
+function setTheme(theme){document.documentElement.dataset.theme=theme;const b=document.getElementById('theme-toggle');b.textContent=theme==='dark'?'☀️ 라이트 모드':'🌙 다크 모드';b.setAttribute('aria-pressed',String(theme==='dark'));}
+document.getElementById('theme-toggle').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+setTheme('light');
+// Original procedural pentatonic ambience: no existing composition, sample or recording is loaded.
+let musicContext=null,musicGain=null,musicTimer=null,musicOn=false,musicIndex=0;
+const melody=[0,2,4,7,9,7,4,2,0,4,2,7,4,9,7,2];
+function scheduleMusicNote(){
+ if(!musicOn||!musicContext||musicContext.state!=='running')return;
+ const t=musicContext.currentTime;
+ const note=(semitones,delay,level)=>{const osc=musicContext.createOscillator(),env=musicContext.createGain();osc.type='triangle';osc.frequency.value=220*Math.pow(2,semitones/12);env.gain.setValueAtTime(0,t+delay);env.gain.linearRampToValueAtTime(level,t+delay+.025);env.gain.exponentialRampToValueAtTime(.0001,t+delay+1.7);osc.connect(env);env.connect(musicGain);osc.start(t+delay);osc.stop(t+delay+1.8);osc.onended=()=>{osc.disconnect();env.disconnect();};};
+ note(melody[musicIndex%melody.length]+12,0,.13);if(musicIndex%4===0)note(-12,0,.09);musicIndex++;
+}
+async function setMusic(on){
+ const b=document.getElementById('music-toggle');
+ if(on){try{const AudioClass=window.AudioContext||window.webkitAudioContext;if(!AudioClass)throw Error();if(!musicContext){musicContext=new AudioClass();musicGain=musicContext.createGain();musicGain.gain.value=Number(document.getElementById('music-volume').value)/100;musicGain.connect(musicContext.destination);}await musicContext.resume();musicOn=true;scheduleMusicNote();clearInterval(musicTimer);musicTimer=setInterval(scheduleMusicNote,800);}catch(e){musicOn=false;b.textContent='음악을 재생하려면 다시 눌러 주세요';return;}}
+ else{musicOn=false;clearInterval(musicTimer);if(musicContext)await musicContext.suspend();}
+ b.textContent=musicOn?'♫ 배경음악 끄기':'♫ 배경음악 켜기';b.setAttribute('aria-pressed',String(musicOn));
+}
+document.getElementById('music-toggle').onclick=()=>setMusic(!musicOn);
+document.getElementById('music-volume').oninput=e=>{if(musicGain)musicGain.gain.setTargetAtTime(Number(e.target.value)/100,musicContext.currentTime,.08);};
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&musicOn)setMusic(false);});
+const welcome=document.getElementById('welcome-dialog');
+document.querySelectorAll('[data-start-theme]').forEach(b=>b.onclick=()=>{setTheme(b.dataset.startTheme);welcome.close();if(document.getElementById('welcome-music').checked)setMusic(true);});
+welcome.addEventListener('cancel',()=>setTheme('light'));
+welcome.showModal();
+window.addEventListener('pagehide',()=>{resetCertificate();if(certDialog.open)certDialog.close();});
+
+    </script>
+    <!-- 스크립트: 탭, 학습 스타일 스위처, 3지선다 퀴즈, 모달 뷰어, 이미지 에러 핸들러 -->
+    <script>
+        /* ---------------------------------------------------------
+           1. 메인 탭 전환
+           --------------------------------------------------------- */
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
+
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+
+        /* ---------------------------------------------------------
+           2. 학생 맞춤 개념공부 유형 선택 스위처
+           (4컷 만화 / 마인드맵 / 이야기형 / 핵심 요약형)
+           --------------------------------------------------------- */
+        const styleButtons = document.querySelectorAll('.style-btn');
+
+        styleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const selectedStyle = btn.getAttribute('data-style');
+
+                styleButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const allViews = document.querySelectorAll('.concept-view');
+                allViews.forEach(view => {
+                    if (view.getAttribute('data-view') === selectedStyle) {
+                        view.style.display = 'block';
+                    } else {
+                        view.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        /* ---------------------------------------------------------
+           3. 2022 개정 단원 목차 버튼 필터링
+           --------------------------------------------------------- */
+        const tocButtons = document.querySelectorAll('.toc-btn');
+        const eraCards = document.querySelectorAll('.era-card');
+
+        tocButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const selectedEra = btn.getAttribute('data-era');
+
+                tocButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                if (selectedEra === 'all') {
+                    eraCards.forEach(card => card.style.display = '');
+                } else {
+                    eraCards.forEach(card => {
+                        if (card.getAttribute('data-era') === selectedEra) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    const firstCard = document.querySelector(`.era-card[data-era="${selectedEra}"]`);
+                    if (firstCard) {
+                        firstCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            });
+        });
+
+        /* ---------------------------------------------------------
+           4. 유물 및 4컷 만화 상세 확대 모달
+           --------------------------------------------------------- */
+        function openRelicModal(title, era, docent, imgSrc, source) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalEra').textContent = era;
+            document.getElementById('modalDocent').textContent = docent;
+            document.getElementById('modalImg').src = imgSrc;
+            const srcEl = document.getElementById('modalSource');
+            if (srcEl) {
+                if (source) {
+                    srcEl.textContent = `🏛️ 출처: ${source}`;
+                    srcEl.style.display = 'block';
+                } else {
+                    srcEl.style.display = 'none';
+                }
+            }
+            document.getElementById('relicModal').classList.add('active');
+        }
+
+        function closeRelicModal(e) {
+            document.getElementById('relicModal').classList.remove('active');
+        }
+
+        /* ---------------------------------------------------------
+           5. 이미지 로드 오류 방지 핸들러 (네트워크 차단 시 대체 뱃지 표시)
+           --------------------------------------------------------- */
+        function handleImgError(imgElement, icon, name) {
+            imgElement.style.display = 'none';
+            const fallbackBadge = imgElement.nextElementSibling;
+            if (fallbackBadge && fallbackBadge.classList.contains('relic-fallback-badge')) {
+                fallbackBadge.style.display = 'flex';
+            }
+        }
+
+        /* ---------------------------------------------------------
+           6. 3지 선다형 퀴즈 엔진
+           --------------------------------------------------------- */
+        /* ---------------------------------------------------------
+           6. 단원별 복습 & 무작위 셔플 3지 선다형 퀴즈 엔진 (2022 개정 교육과정)
+           --------------------------------------------------------- */
+        // 초등 5~6학년 수준의 20문항: 유물·기록의 단서를 바탕으로 생활과 문화를 이해하기.
+        // 2022 개정 사회과 [6사04-01~03]의 자료 탐구 방향을 참고함.
+        // 기존 5단원 구성은 유지하며, 조선 단원은 글자·도구의 쓰임과 대표 인물의 기초 활동을 복습함.
+        // 세부 연도·전투명·연호·법전명 암기를 요구하지 않음.
+        const questionBank = {
+    "unit1": [
+        {
+            "id": "u1_1",
+            "unit": "1단원",
+            "unitTitle": "고조선의 건국 이야기",
+            "question": "단군왕검이 세웠다고 전해지는 우리나라 최초의 나라는 무엇인가요?",
+            "hint": "이 단원에서 배운 나라의 이름을 떠올려 보세요.",
+            "options": [
+                "고조선",
+                "고려",
+                "조선"
+            ],
+            "correctAnswer": "고조선",
+            "explanation": "단군왕검이 고조선을 세웠다는 이야기가 전해져요. 건국 이야기를 통해 옛사람들의 생각을 알아볼 수 있어요."
+        },
+        {
+            "id": "u1_2",
+            "unit": "1단원",
+            "unitTitle": "청동기 시대의 유물",
+            "question": "비파형 동검은 청동으로 만든 칼이에요. 이 유물로 알 수 있는 당시의 모습은 무엇인가요?",
+            "hint": "유물을 만든 재료와 쓰임을 생각해 보세요.",
+            "options": [
+                "금속을 다루는 기술이 있었어요.",
+                "모든 도구를 돌로만 만들었어요.",
+                "글자를 금속 활자로 찍었어요."
+            ],
+            "correctAnswer": "금속을 다루는 기술이 있었어요.",
+            "explanation": "청동으로 칼을 만들었다는 것은 금속을 다루는 기술이 있었다는 뜻이에요. 유물은 당시의 생활을 알려 주는 단서예요."
+        },
+        {
+            "id": "u1_3",
+            "unit": "1단원",
+            "unitTitle": "고조선의 법과 생활",
+            "question": "고조선에는 다른 사람의 물건을 훔치면 벌을 준다는 법이 있었어요. 이를 통해 알 수 있는 것은 무엇인가요?",
+            "hint": "다른 사람의 물건을 함부로 가져가면 왜 벌을 주었을까요?",
+            "options": [
+                "개인의 재산을 중요하게 여겼어요.",
+                "모든 물건을 함께 사용했어요.",
+                "물건을 서로 바꾸지 않았어요."
+            ],
+            "correctAnswer": "개인의 재산을 중요하게 여겼어요.",
+            "explanation": "남의 물건을 훔친 사람을 벌한 것을 보면 개인의 재산을 중요하게 여겼음을 알 수 있어요. 법을 통해 옛사람들의 생활을 짐작할 수 있어요."
+        },
+        {
+            "id": "u1_4",
+            "unit": "1단원",
+            "unitTitle": "고인돌과 사람들의 생활",
+            "question": "고인돌은 커다란 돌을 옮겨 만든 무덤이에요. 고인돌을 만드는 모습으로 가장 알맞은 것은 무엇인가요?",
+            "hint": "무겁고 큰 돌을 옮기려면 누구의 힘이 필요했을까요?",
+            "options": [
+                "여러 사람이 힘을 모아 만들었어요.",
+                "도자기를 구워 큰 돌을 만들었어요.",
+                "한 사람이 작은 돌 하나로 만들었어요."
+            ],
+            "correctAnswer": "여러 사람이 힘을 모아 만들었어요.",
+            "explanation": "커다란 돌을 옮겨 무덤을 만들려면 여러 사람의 힘이 필요했어요. 고인돌을 통해 당시 사람들의 협력과 생활 모습을 짐작할 수 있어요."
+        }
+    ],
+    "unit2": [
+        {
+            "id": "u2_1",
+            "unit": "2단원",
+            "unitTitle": "삼국의 이름",
+            "question": "삼국 시대의 세 나라를 바르게 묶은 것은 무엇인가요?",
+            "hint": "삼국의 ‘삼’은 세 나라를 뜻해요.",
+            "options": [
+                "고구려·백제·신라",
+                "고조선·고려·조선",
+                "고구려·고려·조선"
+            ],
+            "correctAnswer": "고구려·백제·신라",
+            "explanation": "삼국은 고구려, 백제, 신라를 말해요. 세 나라는 서로 경쟁하고 교류하며 문화를 발전시켰어요."
+        },
+        {
+            "id": "u2_2",
+            "unit": "2단원",
+            "unitTitle": "한강 주변의 생활",
+            "question": "삼국은 농사짓기 좋고 다른 지역으로 이동하기 편리한 한강 주변을 차지하려 했어요. 그 까닭은 무엇인가요?",
+            "hint": "사람들이 먹을 것을 얻고 오가기에 어떤 곳이 좋을까요?",
+            "options": [
+                "농사를 짓고 물자를 옮기기 좋았기 때문이에요.",
+                "농사보다 사냥만 하기에 좋았기 때문이에요.",
+                "다른 지역과 오가는 길을 막기 위해서예요."
+            ],
+            "correctAnswer": "농사를 짓고 물자를 옮기기 좋았기 때문이에요.",
+            "explanation": "한강 주변에는 농사지을 땅이 있었고 강을 따라 사람과 물자가 오갈 수 있었어요. 그래서 나라를 발전시키는 데 중요한 지역이었어요."
+        },
+        {
+            "id": "u2_3",
+            "unit": "2단원",
+            "unitTitle": "첨성대와 신라 사람들",
+            "question": "신라의 첨성대는 하늘과 별을 관찰하던 시설로 알려져 있어요. 이를 통해 알 수 있는 신라 사람들의 관심은 무엇인가요?",
+            "hint": "첨성대에서 무엇을 관찰했는지 떠올려 보세요.",
+            "options": [
+                "하늘과 별의 움직임",
+                "바닷속 물고기의 움직임",
+                "땅속 광물의 종류"
+            ],
+            "correctAnswer": "하늘과 별의 움직임",
+            "explanation": "첨성대는 신라 사람들이 하늘과 별의 움직임에 관심을 가졌음을 보여 줘요. 유적을 통해 옛사람들의 생각과 활동을 알아볼 수 있어요."
+        },
+        {
+            "id": "u2_4",
+            "unit": "2단원",
+            "unitTitle": "백제 금동대향로",
+            "question": "백제 금동대향로에는 산과 동물, 악기를 연주하는 사람이 섬세하게 표현되어 있어요. 이를 통해 알 수 있는 것은 무엇인가요?",
+            "hint": "작은 모양까지 자세히 표현하려면 어떤 솜씨가 필요할까요?",
+            "options": [
+                "백제 사람들의 뛰어난 공예 솜씨",
+                "백제 사람들의 한글 인쇄 기술",
+                "백제 사람들의 해시계 제작 기술"
+            ],
+            "correctAnswer": "백제 사람들의 뛰어난 공예 솜씨",
+            "explanation": "금동대향로의 섬세한 모양은 백제 사람들의 뛰어난 공예 솜씨를 보여 줘요. 문화유산에는 당시 사람들의 기술과 생각이 담겨 있어요."
+        }
+    ],
+    "unit3": [
+        {
+            "id": "u3_1",
+            "unit": "3단원",
+            "unitTitle": "발해를 세운 인물",
+            "question": "고구려가 멸망한 뒤, 고구려 유민 등과 함께 발해를 세운 사람은 누구인가요?",
+            "hint": "고구려 유민은 고구려가 멸망한 뒤에도 살아가던 사람들이에요.",
+            "options": [
+                "대조영",
+                "장보고",
+                "세종대왕"
+            ],
+            "correctAnswer": "대조영",
+            "explanation": "대조영은 고구려 유민 등과 함께 발해를 세웠어요. 발해는 고구려의 문화를 이어받았어요."
+        },
+        {
+            "id": "u3_2",
+            "unit": "3단원",
+            "unitTitle": "불국사와 사람들의 믿음",
+            "question": "통일신라 사람들은 불국사에 절과 탑을 세웠어요. 이 유적과 가장 관련이 깊은 종교는 무엇인가요?",
+            "hint": "절은 스님이 머물며 부처님의 가르침을 배우는 곳이에요.",
+            "options": [
+                "불교",
+                "유교",
+                "천주교"
+            ],
+            "correctAnswer": "불교",
+            "explanation": "불국사와 그 안의 탑은 통일신라의 불교 문화를 보여 줘요. 절과 탑을 살펴보면 당시 사람들의 믿음과 건축 기술을 알아볼 수 있어요."
+        },
+        {
+            "id": "u3_3",
+            "unit": "3단원",
+            "unitTitle": "장보고와 바닷길",
+            "question": "장보고는 청해진을 중심으로 바닷길을 지키며 여러 나라와 물건을 사고팔았어요. 어떤 활동을 했나요?",
+            "hint": "‘무역’은 나라 사이에 물건을 사고파는 일이에요.",
+            "options": [
+                "바다를 통한 무역",
+                "한글을 만드는 일",
+                "청동 칼을 만드는 일"
+            ],
+            "correctAnswer": "바다를 통한 무역",
+            "explanation": "장보고는 바닷길을 지키며 여러 나라와 무역했어요. 바닷길을 따라 물건뿐 아니라 문화도 오갈 수 있었어요."
+        },
+        {
+            "id": "u3_4",
+            "unit": "3단원",
+            "unitTitle": "발해 석등과 문화",
+            "question": "발해의 석등에는 고구려 문화와 닮은 모습이 남아 있어요. 이를 통해 무엇을 짐작할 수 있나요?",
+            "hint": "문화유산의 닮은 모습은 나라 사이의 관계를 알려 주기도 해요.",
+            "options": [
+                "발해가 고구려 문화를 이어받았어요.",
+                "발해가 한글을 처음 만들었어요.",
+                "발해가 조선 문화를 이어받았어요."
+            ],
+            "correctAnswer": "발해가 고구려 문화를 이어받았어요.",
+            "explanation": "발해의 석등 등 문화유산에서 고구려 문화와 닮은 모습을 찾을 수 있어요. 이런 자료는 발해가 고구려 문화를 이어받았음을 이해하는 데 도움이 돼요."
+        }
+    ],
+    "unit4": [
+        {
+            "id": "u4_1",
+            "unit": "4단원",
+            "unitTitle": "고려청자와 상감 기법",
+            "question": "고려 사람들은 청자의 표면에 무늬를 파고 다른 색 흙을 채워 넣었어요. 이 방법을 무엇이라고 하나요?",
+            "hint": "서로 다른 색의 흙을 넣어 무늬가 드러나게 하는 방법이에요.",
+            "options": [
+                "상감 기법",
+                "목판 인쇄",
+                "금속 활자 인쇄"
+            ],
+            "correctAnswer": "상감 기법",
+            "explanation": "상감 기법은 표면에 무늬를 파고 다른 색 흙을 채워 넣는 방법이에요. 상감 청자는 고려 사람들의 뛰어난 도자기 제작 기술을 보여 줘요."
+        },
+        {
+            "id": "u4_2",
+            "unit": "4단원",
+            "unitTitle": "팔만대장경과 인쇄",
+            "question": "팔만대장경은 불교 경전의 글자를 나무판에 새긴 것이에요. 무엇에 먹을 묻혀 종이에 글자를 찍었나요?",
+            "hint": "글자가 새겨진 재료에 주목해 보세요.",
+            "options": [
+                "글자를 새긴 나무판",
+                "글자를 쓴 도자기",
+                "글자를 새긴 돌무덤"
+            ],
+            "correctAnswer": "글자를 새긴 나무판",
+            "explanation": "나무판에 글자를 새기고 먹을 묻혀 종이에 찍는 방법이 목판 인쇄예요. 팔만대장경은 고려의 인쇄 기술과 불교 문화를 보여 줘요."
+        },
+        {
+            "id": "u4_3",
+            "unit": "4단원",
+            "unitTitle": "직지와 금속 활자",
+            "question": "고려의 책인 직지는 금속 활자로 인쇄했어요. 금속 활자 인쇄는 어떤 방법인가요?",
+            "hint": "활자는 책을 찍기 위해 만든 글자 모양의 도구예요.",
+            "options": [
+                "금속으로 만든 글자를 배열해 찍어요.",
+                "붓으로 책의 모든 글자를 손으로 써요.",
+                "나무판 한 장에 한 쪽의 글을 새겨 찍어요."
+            ],
+            "correctAnswer": "금속으로 만든 글자를 배열해 찍어요.",
+            "explanation": "금속 활자는 글자 모양을 금속으로 만든 것이에요. 필요한 글자를 골라 배열하고 책을 찍을 수 있어서 다시 사용할 수 있어요."
+        },
+        {
+            "id": "u4_4",
+            "unit": "4단원",
+            "unitTitle": "벽란도와 고려의 교류",
+            "question": "고려의 벽란도에는 여러 나라 상인들이 와서 물건을 사고팔았어요. 어떤 모습을 떠올릴 수 있나요?",
+            "hint": "서로 다른 나라의 사람들이 만나는 곳이었어요.",
+            "options": [
+                "외국 사람들과 물건과 문화를 나누었어요.",
+                "다른 나라와의 왕래를 모두 막았어요.",
+                "고려 안의 물건만 사고팔았어요."
+            ],
+            "correctAnswer": "외국 사람들과 물건과 문화를 나누었어요.",
+            "explanation": "벽란도는 여러 나라 상인이 오가던 무역의 중심지였어요. 이런 교류를 통해 고려의 물건과 문화가 다른 나라에 알려졌어요."
+        }
+    ],
+    "unit5": [
+        {
+            "id": "u5_1",
+            "unit": "5단원",
+            "unitTitle": "훈민정음에 담긴 마음",
+            "question": "세종대왕이 백성들을 위해 훈민정음을 만든 가장 중요한 까닭은 무엇인가요?",
+            "hint": "글을 몰라 자신의 뜻을 전하기 어려운 백성들을 생각했어요.",
+            "options": [
+                "백성들이 글을 쉽게 배우고 뜻을 전하게 하려고",
+                "백성들이 한자를 더 많이 외우게 하려고",
+                "관리들만 글을 사용할 수 있게 하려고"
+            ],
+            "correctAnswer": "백성들이 글을 쉽게 배우고 뜻을 전하게 하려고",
+            "explanation": "세종대왕은 백성들이 자신의 생각을 글로 쉽게 나타낼 수 있도록 훈민정음을 만들었어요. 오늘날 우리가 쓰는 한글의 바탕이에요."
+        },
+        {
+            "id": "u5_2",
+            "unit": "5단원",
+            "unitTitle": "해시계와 생활",
+            "question": "조선의 해시계인 앙부일구는 해가 비칠 때 생기는 그림자를 이용했어요. 무엇을 알아보는 도구였나요?",
+            "hint": "‘해시계’라는 이름에서 쓰임을 생각해 보세요.",
+            "options": [
+                "시간",
+                "비가 내린 양",
+                "바람이 부는 방향"
+            ],
+            "correctAnswer": "시간",
+            "explanation": "앙부일구는 해의 움직임에 따라 그림자의 위치가 달라지는 것을 이용해 시간을 알아보는 도구예요. 조선의 과학 기술이 생활에 쓰인 사례예요."
+        },
+        {
+            "id": "u5_3",
+            "unit": "5단원",
+            "unitTitle": "측우기와 농사",
+            "question": "농사를 지을 때는 비가 얼마나 내렸는지 아는 것이 중요했어요. 이를 재는 조선의 도구는 무엇인가요?",
+            "hint": "빗물을 받아 그 양을 재는 도구예요.",
+            "options": [
+                "측우기",
+                "앙부일구",
+                "자격루"
+            ],
+            "correctAnswer": "측우기",
+            "explanation": "측우기는 비가 내린 양을 재는 도구예요. 조선 사람들은 비의 양을 측정해 농사와 관련된 일을 살피는 데 활용했어요."
+        },
+        {
+            "id": "u5_4",
+            "unit": "5단원",
+            "unitTitle": "이순신과 나라 지키기",
+            "question": "임진왜란 때 이순신 장군은 수군을 이끌고 일본군에 맞섰어요. 이순신 장군이 주로 싸운 곳은 어디인가요?",
+            "hint": "수군은 바다에서 배를 타고 싸우는 군대예요.",
+            "options": [
+                "바다",
+                "산속",
+                "성 안"
+            ],
+            "correctAnswer": "바다",
+            "explanation": "이순신 장군은 수군을 이끌고 바다에서 일본군에 맞서 싸웠어요. 바닷길을 지키며 나라를 지키는 데 큰 힘을 보탰어요."
+        }
+    ]
+};
+
+        // 퀴즈 런타임 상태 변수
+        let currentQuizMode = 'all'; // 'all', 'unit1', 'unit2', 'unit3', 'unit4', 'unit5'
+        let activeQuizList = [];     // 현재 무작위 생성된 문제 리스트
+        let currentQuestionIndex = 0;
+        let userScore = 0;
+        let answeredRecord = [];
+
+        // 배열 무작위 셔플 (Fisher-Yates)
+        function shuffleArray(arr) {
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
+        }
+
+        // 단원 모드별 퀴즈 세트 무작위 생성
+        function generateQuizSet(mode) {
+            let selectedList = [];
+
+            if (mode === 'all') {
+                // 전체 단원 종합: 1~5단원에서 각각 1문제씩 무작위 추출 (총 5문제)
+                const unitKeys = ['unit1', 'unit2', 'unit3', 'unit4', 'unit5'];
+                unitKeys.forEach(uKey => {
+                    const pool = questionBank[uKey];
+                    const randomPick = pool[Math.floor(Math.random() * pool.length)];
+                    selectedList.push(randomPick);
+                });
+                // 5문제의 출제 순서도 무작위 셔플
+                selectedList = shuffleArray(selectedList);
+            } else if (questionBank[mode]) {
+                // 특정 단원 복습: 해당 단원의 4문제를 무작위 순서로 모두 출제
+                selectedList = shuffleArray(questionBank[mode]);
+            }
+
+            // 각 문제의 보기(options) 3개도 무작위로 셔플하여 deep copy
+            return selectedList.map(q => {
+                const shuffledOpts = shuffleArray(q.options);
+                return {
+                    ...q,
+                    shuffledOptions: shuffledOpts
+                };
+            });
+        }
+
+        // 퀴즈 단원 선택 모드 전환 함수
+        function selectQuizMode(mode) {
+            currentQuizMode = mode;
+
+            // 상단 탭 버튼 활성화 스타일 업데이트
+            const modeBtns = document.querySelectorAll('.quiz-mode-btn');
+            modeBtns.forEach(btn => {
+                if (btn.getAttribute('data-unit') === mode) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // 헤더 제목 업데이트
+            const titleEl = document.getElementById('quiz-mode-title');
+            if (titleEl) {
+                const modeTitles = {
+                    all: "전체 단원 종합 퀴즈 (5문제)",
+                    unit1: "1단원: 고조선의 건국 복습 퀴즈",
+                    unit2: "2단원: 삼국의 전성기 복습 퀴즈",
+                    unit3: "3단원: 남북국 시대 복습 퀴즈",
+                    unit4: "4단원: 고려의 문화 복습 퀴즈",
+                    unit5: "5단원: 조선과 과학 복습 퀴즈"
+                };
+                titleEl.textContent = modeTitles[mode] || "스스로 퀴즈 타임";
+            }
+
+            restartQuiz(true);
+        }
+
+        // 퀴즈 UI 동적 렌더링
+        function renderQuizUI() {
+            const mount = document.getElementById('quiz-cards-mount');
+            if (!mount) return;
+
+            mount.innerHTML = '';
+            const total = activeQuizList.length;
+
+            activeQuizList.forEach((q, idx) => {
+                const card = document.createElement('div');
+                card.className = `quiz-card ${idx === 0 ? 'active' : ''}`;
+                card.id = `quiz-card-${idx}`;
+                card.setAttribute('data-qindex', idx);
+
+                const optionNums = ['①', '②', '③'];
+                const optionsHtml = q.shuffledOptions.map((optText, optIdx) => {
+                    // 특수문자 안전 인코딩
+                    const safeText = optText.replace(/'/g, "\\'");
+                    return `
+                        <button type="button" class="option-btn" data-choice-text="${optText}" onclick="handleChoice(${idx}, '${safeText}')">
+                            <span class="option-num">${optionNums[optIdx] || (optIdx + 1)}</span>
+                            <span class="option-label">${optText}</span>
+                        </button>
+                    `;
+                }).join('');
+
+                card.innerHTML = `
+                    <div class="question-number">Q${idx + 1}. [${q.unit}] ${q.unitTitle}</div>
+                    <h3 class="question-text">${q.question}</h3>
+                    <div class="question-hint-box">
+                        <span>💡</span> 힌트: ${q.hint}
+                    </div>
+                    <div class="quiz-options" role="group">
+                        ${optionsHtml}
+                    </div>
+                    <div class="feedback-box" id="feedback-${idx}"></div>
+                `;
+
+                mount.appendChild(card);
+            });
+
+            // 진행 상태 바 & 텍스트 갱신
+            document.getElementById('quiz-progress-text').textContent = `문제 1 / ${total}`;
+            document.getElementById('quiz-progress-bar').style.width = `${(1 / total) * 100}%`;
+
+            // 액션 바 리셋
+            const actionsBar = document.getElementById('quiz-actions-bar');
+            if (actionsBar) actionsBar.style.display = 'flex';
+
+            const nextBtn = document.getElementById('next-q-btn');
+            if (nextBtn) {
+                nextBtn.disabled = true;
+                nextBtn.innerHTML = `<span>다음 문제로 풀기</span> <span>👉</span>`;
+            }
+
+            // 결과 화면 숨김
+            const resultView = document.getElementById('quiz-result-view');
+            if (resultView) resultView.classList.remove('active');
+        }
+
+        // 보기 선택 핸들러
+        function handleChoice(questionIdx, selectedText) {
+            if (answeredRecord[questionIdx]) return;
+
+            const currentQ = activeQuizList[questionIdx];
+            if (!currentQ) return;
+
+            const card = document.getElementById(`quiz-card-${questionIdx}`);
+            const options = card.querySelectorAll('.option-btn');
+            const feedbackBox = document.getElementById(`feedback-${questionIdx}`);
+            const nextBtn = document.getElementById('next-q-btn');
+
+            if (selectedText === currentQ.correctAnswer) {
+                answeredRecord[questionIdx] = true;
+                const pointsPerQuestion = Math.round(100 / activeQuizList.length);
+                userScore += pointsPerQuestion;
+
+                options.forEach(btn => {
+                    btn.disabled = true;
+                    if (btn.getAttribute('data-choice-text') === currentQ.correctAnswer) {
+                        btn.classList.add('correct');
+                    }
+                });
+
+                feedbackBox.className = 'feedback-box correct-feedback show';
+                feedbackBox.innerHTML = `
+                    <div class="feedback-title">
+                        <span>🎉</span> 와우! 정답입니다! 참 잘했어요!
+                    </div>
+                    <div class="feedback-explanation">
+                        <strong>해설:</strong> ${currentQ.explanation}
+                    </div>
+                `;
+
+                nextBtn.disabled = false;
+                if (questionIdx === activeQuizList.length - 1) {
+                    nextBtn.innerHTML = `<span>결과 보러 가기</span> <span>🏆</span>`;
+                }
+            } else {
+                options.forEach(btn => {
+                    if (btn.getAttribute('data-choice-text') === selectedText) {
+                        btn.classList.add('wrong');
+                        setTimeout(() => {
+                            btn.classList.remove('wrong');
+                        }, 600);
+                    }
+                });
+
+                feedbackBox.className = 'feedback-box wrong-feedback show';
+                feedbackBox.innerHTML = `
+                    <div class="feedback-title">
+                        <span>💡</span> 아쉬워요! 다시 한 번 골라볼까요?
+                    </div>
+                    <div class="feedback-explanation">
+                        위의 힌트를 다시 한 번 찬찬히 읽고 다른 보기를 눌러보세요!
+                    </div>
+                `;
+            }
+        }
+
+        // 다음 문제로 이동
+        function goToNextQuestion() {
+            const currentCard = document.getElementById(`quiz-card-${currentQuestionIndex}`);
+            if (currentCard) currentCard.classList.remove('active');
+
+            currentQuestionIndex++;
+            const total = activeQuizList.length;
+
+            if (currentQuestionIndex < total) {
+                const nextCard = document.getElementById(`quiz-card-${currentQuestionIndex}`);
+                if (nextCard) nextCard.classList.add('active');
+
+                document.getElementById('quiz-progress-text').textContent = `문제 ${currentQuestionIndex + 1} / ${total}`;
+                const percent = ((currentQuestionIndex + 1) / total) * 100;
+                document.getElementById('quiz-progress-bar').style.width = `${percent}%`;
+
+                const nextBtn = document.getElementById('next-q-btn');
+                nextBtn.disabled = true;
+            } else {
+                // 퀴즈 완료 시
+                document.getElementById('quiz-actions-bar').style.display = 'none';
+                document.getElementById('quiz-progress-text').textContent = `완료!`;
+                document.getElementById('quiz-progress-bar').style.width = `100%`;
+
+                const resultView = document.getElementById('quiz-result-view');
+                resultView.classList.add('active');
+                showCertificateEntry();
+
+                // 100점 만점 보정
+                const displayScore = userScore > 100 ? 100 : userScore;
+                document.getElementById('final-score-display').textContent = displayScore;
+                const commentEl = document.getElementById('final-comment-display');
+
+                if (displayScore >= 90) {
+                    commentEl.textContent = "🏆 100점 만점 수준! 2022 개정 한국사 탐험을 완벽하게 마스터한 어린이 역사 박사님입니다!";
+                } else if (displayScore >= 60) {
+                    commentEl.textContent = "🌟 훌륭해요! 한국사의 주요 흐름을 아주 잘 이해하고 있군요!";
+                } else {
+                    commentEl.textContent = "😊 앞선 '맞춤 개념공부'와 '다채움 영상 학습'을 다시 한 번 살펴보고 재도전해 보세요!";
+                }
+            }
+        }
+
+        // 퀴즈 재시작 (shuffleNew: true면 새로운 랜덤 세트 생성)
+        function restartQuiz(shuffleNew = true) {
+            resetCertificate();
+            currentQuestionIndex = 0;
+            userScore = 0;
+
+            if (shuffleNew || activeQuizList.length === 0) {
+                activeQuizList = generateQuizSet(currentQuizMode);
+            }
+
+            answeredRecord = new Array(activeQuizList.length).fill(false);
+            renderQuizUI();
+        }
+
+        // 다른 단원 선택하기 (상단 탭으로 스크롤 이동)
+        function focusQuizModes() {
+            const nav = document.getElementById('quizModeNav');
+            if (nav) {
+                nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // 페이지 로드 시 퀴즈 자동 초기화
+        document.addEventListener('DOMContentLoaded', function () {
+            selectQuizMode('all');
+        });
+        // 즉시 실행으로 초기 퀴즈 렌더링 보장
+        selectQuizMode('all');
+    </script>
+</body>
+
+</html>
