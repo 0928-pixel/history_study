@@ -1,32 +1,5 @@
 (() => {
   'use strict';
-  const today = document.getElementById('visitor-today');
-  const total = document.getElementById('visitor-total');
-  const status = document.getElementById('visitor-status');
-  async function loadVisitors(register = false) {
-    try {
-      const response = await fetch('/.netlify/functions/visitors', { method: register ? 'POST' : 'GET', credentials: 'same-origin', cache: 'no-store', signal: AbortSignal.timeout(15000) });
-      if (!response.ok) throw new Error('unavailable');
-      const data = await response.json();
-      if (!Number.isSafeInteger(data.today) || !Number.isSafeInteger(data.total)) throw new Error('invalid');
-      today.textContent = data.today.toLocaleString('ko-KR') + '명';
-      total.textContent = data.total.toLocaleString('ko-KR') + '명';
-      status.textContent = '한국 시간 · 브라우저별 하루 1회, 누적은 일별 합계';
-    } catch {
-      status.textContent = '통계를 잠시 불러올 수 없어요.';
-    }
-  }
-  // Cross-tab lock prevents the first concurrent tabs creating two visitor cookies.
-  const register = () => loadVisitors(true);
-  if (navigator.locks) navigator.locks.request('history-visitor', register).catch(() => loadVisitors(false));
-  else register();
-  let date = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
-  setInterval(() => {
-    if (document.hidden) return;
-    const now = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
-    const changed = now !== date; date = now;
-    loadVisitors(changed);
-  }, 60000);
   const form = document.getElementById('community-feedback-form');
   const result = document.getElementById('feedback-status');
   const button = form.querySelector('button[type="submit"]');

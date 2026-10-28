@@ -1,16 +1,6 @@
 [build]
   command = "node scripts/build.cjs"
   publish = "public"
-  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "22"
-
-[functions]
-  node_bundler = "esbuild"
-
-[[headers]]
-  for = "/.netlify/functions/*"
-  [headers.values]
-    Cache-Control = "no-store"
-    X-Content-Type-Options = "nosniff"
