@@ -1892,6 +1892,64 @@
 .history-timeline-note{font-size:.83rem;color:var(--text-muted);margin-top:12px}
 :root[data-theme="dark"] .history-stop.done{background:#153c32;color:#b8f2dc}
 @media(max-width:720px){.history-tool-grid,.history-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}#study-welcome{padding:18px}}
+
+/* Custom original cartoon-like learning flow and stamp journey */
+#welcome-dialog{width:min(900px,96vw);max-height:94dvh;padding:clamp(18px,3vw,32px);background:linear-gradient(145deg,#fffef5,#fff2cf);border:3px solid #efca81;border-radius:28px;color:#573b27;box-shadow:0 28px 90px #35200f55;font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif}
+#welcome-dialog::backdrop{background:#263b54b8;backdrop-filter:blur(6px)}
+#welcome-dialog #welcome-title{font-family:'Gaegu','Noto Sans KR',sans-serif;text-align:center;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.25;color:#78421c;letter-spacing:-.02em;margin:0 auto 8px}
+#welcome-dialog>p{text-align:center;margin:8px 0 14px;line-height:1.65}
+#welcome-dialog #study-preference-form{display:flex;flex-direction:column;gap:12px}
+#welcome-dialog .study-question{border:2px solid #f4d899;border-radius:20px;padding:14px 16px 16px;background:#fffdf7;margin:0;min-width:0}
+#welcome-dialog .study-question legend{font-size:1rem;color:#694022;padding:0 9px;font-weight:800}
+#welcome-dialog .study-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:6px}
+#welcome-dialog .study-choice{display:flex;align-items:center;gap:9px;padding:12px 13px;margin:0;min-width:0;text-align:left;border:2px solid #e9e1d0;border-radius:15px;background:#fff;color:#3f3b35;font-size:.91rem;line-height:1.45;font-weight:650;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+#welcome-dialog .study-choice:nth-child(4n + 1){background:#fff2ed}#welcome-dialog .study-choice:nth-child(4n + 2){background:#edf8ff}#welcome-dialog .study-choice:nth-child(4n + 3){background:#effaf0}#welcome-dialog .study-choice:nth-child(4n + 4){background:#f6f0ff}
+#welcome-dialog .study-choice:hover{transform:translateY(-2px);border-color:#e4aa4e;box-shadow:0 4px 12px #c67d2b22}
+#welcome-dialog .study-choice:has(input:checked){border-color:#d4862c;box-shadow:0 0 0 2px #f8c881;background:#fff5d5}
+#welcome-dialog .study-choice input{flex:0 0 auto;width:18px;height:18px;accent-color:#b86a1b;margin:0}
+#welcome-dialog .study-choice:focus-within{outline:3px solid #53a5dd;outline-offset:2px}
+#welcome-dialog .study-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:4px}
+#welcome-dialog .study-actions .feature-btn{width:100%;min-width:0;min-height:46px;display:flex;justify-content:center;align-items:center;font-weight:800;font-size:.95rem}
+#welcome-dialog #study-find,#welcome-dialog #study-start{background:linear-gradient(135deg,#fa9938,#e97825);color:#fff;border:2px solid #b75b25}
+#welcome-dialog #study-start[hidden],#welcome-dialog #study-result[hidden]{display:none!important}
+#welcome-dialog #study-result{background:#eaf9ed;border:2px dashed #65b981;border-radius:18px;text-align:center;color:#275a3b;font-weight:800;font-size:1.04rem;padding:18px}
+#welcome-dialog .privacy-note{text-align:center;font-size:.76rem;color:#81694f}
+.history-tools>.card:first-child{background:linear-gradient(180deg,#a6ddf9 0%,#d1effc 31%,#fbf3d6 31%,#fbefd3 100%);border:3px solid #d9ba76;overflow:hidden;position:relative;padding:clamp(17px,3vw,30px)}
+.history-tools>.card:first-child>h2{font-family:'Gaegu','Noto Sans KR',sans-serif;text-align:center;color:#663a23;font-size:clamp(1.9rem,3.5vw,2.6rem);text-shadow:1px 2px #fff;position:relative}
+.history-tools>.card:first-child>p{color:#5c503e;text-align:center;font-weight:650;position:relative}
+.history-tools .history-track{max-width:550px;margin:13px auto;border:2px solid #9fbead;height:18px;background:#fff9e9}
+.history-tools #history-progress-label{text-align:center;font-weight:800;color:#60442c}
+.history-tool-grid{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;gap:12px;padding:42px 8px 45px;isolation:isolate;min-height:330px}
+.history-road{position:absolute;inset:6% 0;width:100%;height:88%;z-index:-1;pointer-events:none}
+.history-stop{position:relative;background:#fffef8e8;border:2px solid #d8b980;border-radius:24px;box-shadow:0 7px 0 #c49f68,0 12px 20px #8a683344;padding:14px 8px;min-height:205px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:6px;transform:translateY(var(--offset,0px));animation:history-float 4s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.history-stop:nth-of-type(2){--offset:-32px;--delay:-.7s}.history-stop:nth-of-type(3){--offset:17px;--delay:-1.6s}.history-stop:nth-of-type(4){--offset:-29px;--delay:-2.2s}.history-stop:nth-of-type(5){--offset:10px;--delay:-3.1s}
+@keyframes history-float{0%,100%{transform:translateY(var(--offset,0px))}50%{transform:translateY(calc(var(--offset,0px) - 5px))}}
+.history-stop .history-art{font-size:clamp(2.2rem,4vw,3rem);line-height:1.2;filter:drop-shadow(0 4px 2px #59462144)}
+.history-stop .history-number{background:#fff0ac;border-radius:99px;padding:3px 10px;color:#794924;font-size:.73rem;font-weight:900}
+.history-stop .history-label{font-size:.91rem;color:#503a2c;line-height:1.4;font-weight:900}
+.history-stop .history-stamp{width:65px;height:65px;border:3px double #dbad91;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#bc846b;font-weight:900;font-size:.78rem;transform:rotate(-12deg);opacity:.55}
+.history-stop.done .history-stamp{color:#c84b3e;border:4px double #c84b3e;background:#fff1dd;opacity:1;transform:rotate(-15deg);box-shadow:0 0 0 3px #f7d8b5}
+.history-stop.stamp-pop .history-stamp{animation:stamp-slam .55s cubic-bezier(.2,1.25,.4,1) both}
+@keyframes stamp-slam{0%{transform:scale(2.7) rotate(-27deg);opacity:0}65%{transform:scale(.82) rotate(-12deg);opacity:1}100%{transform:scale(1) rotate(-15deg);opacity:1}}
+.history-stop .history-visit,.history-stop .history-stamp-button{border:1px solid #ce9a64;border-radius:99px;padding:7px 9px;font:inherit;font-size:.76rem;font-weight:850;cursor:pointer;width:100%;min-height:33px;background:#fff3d8;color:#624025}
+.history-stop .history-stamp-button{background:#fbe3d9;color:#924637}
+.history-stop.done .history-stamp-button{background:#dff5df;color:#22663d;border-color:#9bcf9d}
+.history-stop button:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+.history-tools .history-tool-action{border:2px solid #cda970;border-radius:99px;background:#fff9e8;color:#6d4e32;font-weight:800}
+.history-tools .history-tool-action#history-mark-done{background:#d9f5e4;color:#265f41}
+.history-tools .history-timeline{gap:10px}
+:root[data-theme="dark"] #welcome-dialog{background:linear-gradient(145deg,#342a26,#483a31);color:#faecd8}
+:root[data-theme="dark"] #welcome-dialog #welcome-title,:root[data-theme="dark"] #welcome-dialog .study-question legend{color:#fff1d1}
+:root[data-theme="dark"] #welcome-dialog .study-question{background:#44352d}
+:root[data-theme="dark"] #welcome-dialog .study-choice{color:#322720}
+:root[data-theme="dark"] .history-tools>.card:first-child{background:linear-gradient(180deg,#385f76 0%,#39576a 30%,#413e31 30%,#413e31 100%)}
+:root[data-theme="dark"] .history-tools>.card:first-child>h2,:root[data-theme="dark"] .history-tools>.card:first-child>p,:root[data-theme="dark"] .history-tools #history-progress-label{color:#f6e1b8}
+:root[data-theme="dark"] .history-stop{background:#3c332a;color:#f5ecd4;border-color:#ac875c;box-shadow:0 7px 0 #5b4633}
+:root[data-theme="dark"] .history-stop .history-label{color:#f5e7d4}
+@media(max-width:800px){.history-tool-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;min-height:0;padding:25px 5px}.history-road{display:none}.history-stop:nth-of-type(n){--offset:0px;min-height:200px}}
+@media(max-width:560px){#welcome-dialog .study-choices{grid-template-columns:1fr 1fr;gap:7px}#welcome-dialog .study-choice{font-size:.78rem;padding:10px 8px;align-items:flex-start}#welcome-dialog .study-question{padding:12px 10px}#welcome-dialog .study-question legend{font-size:.88rem}#welcome-dialog .study-actions{grid-template-columns:1fr}.history-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.history-stop{min-height:202px}}
+@media(prefers-reduced-motion:reduce){.history-stop,.history-stop.stamp-pop .history-stamp{animation:none!important}#welcome-dialog .study-choice{transition:none!important}}
+
 </style>
 </head>
 
@@ -1906,21 +1964,21 @@
 <h2 id="welcome-title">🎯 나에게 맞는 역사 공부법 찾기</h2>
 <p>어떤 공부 방법이 재미있을까요? 세 질문에 답하고 역사 탐험을 시작해요!</p>
 <form id="study-preference-form">
-<fieldset class="study-question"><legend>1. 새로운 내용을 배울 때 무엇이 가장 좋나요?</legend>
+<fieldset class="study-question"><legend>1. 새로운 내용을 배울 때 무엇이 가장 좋나요?</legend><div class="study-choices">
 <label class="study-choice"><input type="radio" name="q1" value="story" required>이야기로 들으면 잘 이해돼요</label>
 <label class="study-choice"><input type="radio" name="q1" value="comic">그림과 만화로 보고 싶어요</label>
 <label class="study-choice"><input type="radio" name="q1" value="mindmap">서로 연결된 그림으로 정리하고 싶어요</label>
-<label class="study-choice"><input type="radio" name="q1" value="summary">중요한 내용만 짧게 알고 싶어요</label></fieldset>
-<fieldset class="study-question"><legend>2. 역사 시험을 준비한다면?</legend>
+<label class="study-choice"><input type="radio" name="q1" value="summary">중요한 내용만 짧게 알고 싶어요</label></div></fieldset>
+<fieldset class="study-question"><legend>2. 역사 시험을 준비한다면?</legend><div class="study-choices">
 <label class="study-choice"><input type="radio" name="q2" value="summary" required>핵심 문장을 모아 읽어요</label>
 <label class="study-choice"><input type="radio" name="q2" value="mindmap">개념끼리 선으로 연결해요</label>
 <label class="study-choice"><input type="radio" name="q2" value="story">사건의 흐름을 이야기해 봐요</label>
-<label class="study-choice"><input type="radio" name="q2" value="comic">그림 속 장면을 떠올려요</label></fieldset>
-<fieldset class="study-question"><legend>3. 내가 만들고 싶은 공부 자료는?</legend>
+<label class="study-choice"><input type="radio" name="q2" value="comic">그림 속 장면을 떠올려요</label></div></fieldset>
+<fieldset class="study-question"><legend>3. 내가 만들고 싶은 공부 자료는?</legend><div class="study-choices">
 <label class="study-choice"><input type="radio" name="q3" value="comic" required>재미있는 4컷 만화</label>
 <label class="study-choice"><input type="radio" name="q3" value="story">술술 읽히는 이야기</label>
 <label class="study-choice"><input type="radio" name="q3" value="summary">한 장짜리 요약 노트</label>
-<label class="study-choice"><input type="radio" name="q3" value="mindmap">알록달록한 마인드맵</label></fieldset>
+<label class="study-choice"><input type="radio" name="q3" value="mindmap">알록달록한 마인드맵</label></div></fieldset>
 <div id="study-result" hidden role="status"></div>
 <div class="study-actions"><button class="feature-btn issue-primary" id="study-find" type="submit">나의 공부법 추천받기</button><button class="feature-btn" id="study-start" type="button" hidden>이 공부법으로 1단원 시작하기</button><button class="feature-btn" id="study-skip" type="button">직접 골라서 공부할래요</button></div>
 </form><p class="privacy-note">공부를 좋아하는 방식에 따라 추천해요. 학습 능력이나 성적을 판정하는 검사는 아니에요.</p>
@@ -1973,7 +2031,7 @@
 </aside>
 <div class="learning-main">
         <section class="history-tools" aria-label="역사 탐험 도구">
-<div class="card"><h2>🗺️ 나의 역사 탐험 지도</h2><p>단원 공부를 마치면 도장을 찍어 보세요! 기록은 이 기기의 브라우저에만 저장돼요.</p><div class="history-track" aria-label="학습 진도"><div id="history-progress-fill"></div></div><p id="history-progress-label" aria-live="polite">0 / 5단원 학습 완료</p><div class="history-tool-grid" id="history-stops"></div><button type="button" class="history-tool-action" id="history-mark-done">현재 단원 공부 완료 도장 찍기</button><button type="button" class="history-tool-action" id="history-reset">진도 초기화</button></div>
+<div class="card"><h2>🗺️ 나의 역사 탐험 지도</h2><p>단원 공부를 마치면 도장을 찍어 보세요! 기록은 이 기기의 브라우저에만 저장돼요.</p><div class="history-track" aria-label="학습 진도"><div id="history-progress-fill"></div></div><p id="history-progress-label" aria-live="polite">0 / 5단원 학습 완료</p><div class="history-tool-grid" id="history-stops" aria-label="단원별 탐험 정거장"></div><p id="history-stamp-feedback" role="status" style="text-align:center;font-weight:800;color:#70451c"></p><button type="button" class="history-tool-action" id="history-mark-done">현재 단원 공부 완료 도장 찍기</button><button type="button" class="history-tool-action" id="history-reset">진도 초기화</button></div>
 <div class="card"><h2>⏳ 한눈에 보는 한국사 타임라인</h2><p>서로 다른 나라가 같은 시기에 존재하기도 했어요. 시대를 누르면 학습 단원으로 이동해요.</p><div class="history-timeline">
 <button type="button" data-history-era="unit1"><strong>고조선</strong><small>기원전 2333년 건국 전승 · 청동기 문화</small></button>
 <button type="button" data-history-era="unit2"><strong>삼국과 가야</strong><small>고구려·백제·신라·가야의 성장과 교류</small></button>
@@ -3737,18 +3795,36 @@ function jump(era){
  document.querySelector('#toc-buttons .toc-btn[data-era="'+era+'"]')?.click();
  document.getElementById('tab-concept')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function draw(){
+function draw(celebrateId){
  const mount=document.getElementById('history-stops');if(!mount)return;mount.replaceChildren();
- ids.forEach((id,i)=>{const b=document.createElement('button');b.type='button';b.className='history-stop'+(progress[id]?' done':'');
- b.innerHTML='<span>'+icons[i]+'</span><strong>'+(i+1)+'단원 '+names[i]+'</strong><small>'+(progress[id]?'✅ 공부 완료':'○ 탐험하기')+'</small>';
- b.addEventListener('click',()=>jump(id));mount.append(b)});
+ const road=document.createElementNS('http://www.w3.org/2000/svg','svg');road.setAttribute('class','history-road');road.setAttribute('viewBox','0 0 1000 300');road.setAttribute('preserveAspectRatio','none');road.setAttribute('aria-hidden','true');
+ const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M 0 196 C 100 90, 170 85, 245 160 S 395 310, 505 152 S 665 25, 740 137 S 920 280,1000 90');path.setAttribute('stroke','#94b677');path.setAttribute('stroke-width','80');path.setAttribute('fill','none');path.setAttribute('stroke-linecap','round');road.append(path);
+ const lines=document.createElementNS('http://www.w3.org/2000/svg','path');lines.setAttribute('d',path.getAttribute('d'));lines.setAttribute('stroke','#dfd9a8');lines.setAttribute('stroke-width','4');lines.setAttribute('stroke-dasharray','14 16');lines.setAttribute('fill','none');road.append(lines);mount.append(road);
+ ids.forEach((id,i)=>{
+  const stop=document.createElement('div');stop.className='history-stop'+(progress[id]?' done':'')+(celebrateId===id?' stamp-pop':'');
+  const number=document.createElement('span');number.className='history-number';number.textContent=(i+1)+'번째 탐험';
+  const art=document.createElement('span');art.className='history-art';art.textContent=icons[i];art.setAttribute('aria-hidden','true');
+  const label=document.createElement('strong');label.className='history-label';label.textContent=names[i];
+  const stamp=document.createElement('span');stamp.className='history-stamp';stamp.textContent=progress[id]?'참 잘했어요!':'도장 자리';
+  const visit=document.createElement('button');visit.type='button';visit.className='history-visit';visit.textContent='📚 단원 공부하기';visit.addEventListener('click',()=>jump(id));
+  const check=document.createElement('button');check.type='button';check.className='history-stamp-button';check.textContent=progress[id]?'✅ 도장 완료':'🌟 도장 찍기';
+  check.setAttribute('aria-label',names[i]+' 학습 완료 도장 찍기');
+  check.addEventListener('click',()=>stampUnit(id));
+  stop.append(number,art,label,stamp,visit,check);mount.append(stop);
+ });
  const count=ids.filter(id=>progress[id]).length;
  document.getElementById('history-progress-label').textContent=count+' / 5단원 학습 완료';
  document.getElementById('history-progress-fill').style.width=(count*20)+'%';
 }
+function stampUnit(id){
+ progress[id]=true;save();draw(id);
+ const feedback=document.getElementById('history-stamp-feedback');
+ if(feedback)feedback.textContent='🎉 '+names[ids.indexOf(id)]+' 탐험 도장을 받았어요!';
+}
+
 document.getElementById('history-mark-done')?.addEventListener('click',()=>{
  let era=selected();if(era==='all'){alert('먼저 왼쪽에서 완료할 단원을 선택해 주세요.');return;}
- progress[era]=true;save();draw();
+ stampUnit(era);
 });
 document.getElementById('history-reset')?.addEventListener('click',()=>{
  if(confirm('이 브라우저에 저장된 학습 완료 도장을 모두 지울까요?')){progress={};save();draw()}
