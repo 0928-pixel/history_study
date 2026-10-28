@@ -1951,6 +1951,7 @@
 @media(prefers-reduced-motion:reduce){.history-stop,.history-stop.stamp-pop .history-stamp{animation:none!important}#welcome-dialog .study-choice{transition:none!important}}
 
 </style>
+    <link rel="stylesheet" href="/site-community.css">
 </head>
 
 <body>
@@ -2805,6 +2806,22 @@
             </div>
         </div>
 
+        <details class="community-feedback">
+            <summary>💌 요청사항 적기 · 함께 만드는 탐험대</summary>
+            <form id="community-feedback-form" name="history-feedback" method="POST" action="/feedback-thanks.html" data-netlify="true" netlify-honeypot="website">
+                <input type="hidden" name="form-name" value="history-feedback">
+                <p>건의사항, 개선 아이디어, 발견한 오류를 알려 주세요.</p>
+                <label for="feedback-kind">어떤 의견인가요?</label>
+                <select id="feedback-kind" name="kind"><option>건의사항</option><option>개선사항</option><option>오류 신고</option></select>
+                <label for="feedback-message">의견 내용</label>
+                <textarea id="feedback-message" name="message" required minlength="10" maxlength="2000" aria-describedby="feedback-help" placeholder="더 즐겁게 공부할 수 있는 아이디어를 10자 이상 적어 주세요."></textarea>
+                <p id="feedback-help" class="feedback-help">이름·전화번호 같은 개인정보는 적지 마세요. 의견은 운영자만 확인할 수 있는 비공개 건의함에 저장돼요.</p>
+                <div class="feedback-honey" aria-hidden="true"><label for="feedback-website">Website</label><input id="feedback-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <button type="submit">의견 보내기 ✉️</button>
+                <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
+                <noscript>전송 후 접수 안내 페이지로 이동해요.</noscript>
+            </form>
+        </details>
         <!-- 푸터 -->
         <footer>
             <p class="footer-note">🎒 2022 개정 교육과정 초등 사회과 한국사 교실</p>
@@ -3850,6 +3867,7 @@ document.getElementById('study-skip')?.addEventListener('click',()=>{
 });
 })();
 </script>
+<script src="/site-community.js" defer></script>
 </body>
 
 </html>
