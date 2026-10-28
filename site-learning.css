@@ -14,3 +14,23 @@
 @media(max-width:600px){.joseon-scope{padding:15px}.joseon-scope-grid{grid-template-columns:1fr}.timeline-heading h2{font-size:1.45rem}#timeline-content li{grid-template-columns:75px 16px minmax(0,1fr);gap:8px}#timeline-content .history-timeline:before{left:89px}.timeline-date{font-size:.65rem}.timeline-date small{font-size:.6rem}#timeline-content li:before{width:15px;height:15px}#timeline-content button{padding:13px 10px}.timeline-order{font-size:.6rem}}
 @media(prefers-reduced-motion:reduce){.timeline-icon{animation:none}#timeline-content button{transition:none}}
 @media print{#timeline-toggle{display:none!important}.timeline-icon{animation:none}.joseon-scope{break-inside:avoid}}
+
+/* One-question welcome survey. */
+#welcome-dialog{width:min(600px,calc(100vw - 28px));padding:22px;max-height:calc(100dvh - 28px);border-radius:24px}
+#welcome-dialog #welcome-title{font-size:1.95rem;line-height:1.25;margin-bottom:6px}
+#welcome-dialog>p{font-size:.85rem;margin:6px 0 14px}
+#welcome-dialog #study-preference-form{gap:12px}
+#welcome-dialog .study-question{padding:10px 12px 14px;border-radius:16px}
+#welcome-dialog .study-question legend{font-size:.9rem;line-height:1.6}
+#welcome-dialog .study-choices{gap:8px;margin-top:2px}
+#welcome-dialog .study-choice{padding:11px 10px;font-size:.85rem;line-height:1.55;min-height:46px;align-items:center}
+#welcome-dialog .study-choice span{min-width:0}
+#welcome-dialog .study-actions{gap:8px}
+#welcome-dialog .study-actions .feature-btn{font-size:.83rem;padding:10px;min-height:42px}
+#welcome-dialog #study-start{grid-column:1 / -1}
+#welcome-dialog #study-result{font-size:.88rem;padding:12px;line-height:1.8;border-radius:12px}
+#welcome-dialog .privacy-note{font-size:.68rem;line-height:1.8;margin:12px 0 0}
+@media(max-width:560px){#welcome-dialog{padding:18px 14px}#welcome-dialog #welcome-title{font-size:1.65rem}#welcome-dialog .study-choices{grid-template-columns:1fr 1fr}#welcome-dialog .study-choice{font-size:.76rem;padding:10px 8px;gap:6px}#welcome-dialog .study-actions{grid-template-columns:1fr}#welcome-dialog .study-choice input{width:16px;height:16px}}
+
+#welcome-dialog #study-find[hidden]{display:none!important}
+#welcome-dialog #study-start:not([hidden])~#study-skip{grid-column:1 / -1}
