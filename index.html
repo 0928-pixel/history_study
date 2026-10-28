@@ -1863,6 +1863,35 @@
  body[data-print-mode="certificate"]>#certificate-dialog{page:certificate-page}
 }
 
+
+/* 2026 history exploration additions */
+#study-welcome{width:min(680px,94vw);padding:28px;max-height:90dvh}
+#study-welcome .study-question{margin:20px 0;border:1px solid var(--border-warm);border-radius:14px;padding:16px;background:var(--color-primary-soft)}
+#study-welcome .study-question legend{font-weight:800;padding:0 6px}
+#study-welcome .study-choice{display:block;padding:9px 3px;cursor:pointer;font-size:.95rem}
+#study-welcome input{accent-color:#d97706;margin-right:9px}
+#study-welcome .study-actions{display:flex;gap:8px;flex-wrap:wrap}
+#study-welcome .study-actions button{flex:1;min-width:160px}
+#study-result{padding:16px;border-radius:14px;background:var(--color-primary-soft);margin:16px 0}
+#study-result[hidden]{display:none!important}
+.history-tools{display:grid;grid-template-columns:1fr;gap:20px;margin:0 0 24px}
+.history-tools .card{margin-bottom:0}
+.history-tool-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.history-stop{border:2px solid var(--border-warm);border-radius:16px;padding:15px 7px;text-align:center;background:var(--surface-card);color:var(--text-main);cursor:pointer;font:inherit;min-width:0}
+.history-stop strong{display:block;font-size:.87rem;line-height:1.4;margin:6px 0}
+.history-stop span{font-size:1.55rem}
+.history-stop small{display:block;font-size:.74rem;line-height:1.5;color:var(--text-muted)}
+.history-stop.done{border-color:#10b981;background:#ecfdf5;color:#065f46}
+.history-tool-action{font:inherit;border:1px solid var(--border-warm);border-radius:10px;padding:9px 13px;background:var(--surface-card);color:var(--text-main);cursor:pointer;margin:12px 6px 0 0}
+.history-track{height:12px;background:var(--color-primary-light);border-radius:20px;overflow:hidden;margin:12px 0}
+#history-progress-fill{height:100%;width:0;background:linear-gradient(90deg,#f59e0b,#10b981);transition:width .3s}
+.history-timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:16px}
+.history-timeline button{border:1px solid var(--border-warm);border-top:5px solid var(--color-primary);border-radius:12px;padding:12px 8px;background:var(--surface-card);color:var(--text-main);font:inherit;text-align:left;cursor:pointer}
+.history-timeline button strong{display:block;font-size:.87rem}
+.history-timeline button small{display:block;font-size:.77rem;line-height:1.55;color:var(--text-muted);margin-top:6px}
+.history-timeline-note{font-size:.83rem;color:var(--text-muted);margin-top:12px}
+:root[data-theme="dark"] .history-stop.done{background:#153c32;color:#b8f2dc}
+@media(max-width:720px){.history-tool-grid,.history-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}#study-welcome{padding:18px}}
 </style>
 </head>
 
@@ -1874,10 +1903,27 @@
 <label>음량 <input id="music-volume" type="range" min="0" max="100" value="14" aria-label="배경음악 음량"></label>
 </div>
 <dialog id="welcome-dialog" class="feature-dialog" aria-labelledby="welcome-title">
-<h2 id="welcome-title">역사 탐험을 시작해요!</h2><p>눈이 편안한 화면을 골라 주세요.</p>
-<div class="feature-options"><button type="button" class="feature-btn" data-start-theme="light">☀️ 라이트 모드</button><button type="button" class="feature-btn" data-start-theme="dark">🌙 다크 모드</button></div>
-<label><input type="checkbox" id="welcome-music"> 느리고 잔잔한 배경음악과 함께하기</label>
-<p class="privacy-note">기존 곡이나 녹음 파일 없이 이 페이지가 직접 만드는 느린 오음계 연주예요. 부드러운 음색과 긴 여운으로 조용하게 흐릅니다. 음악은 선택 후 재생되며 언제든 끌 수 있어요.</p>
+<h2 id="welcome-title">🎯 나에게 맞는 역사 공부법 찾기</h2>
+<p>어떤 공부 방법이 재미있을까요? 세 질문에 답하고 역사 탐험을 시작해요!</p>
+<form id="study-preference-form">
+<fieldset class="study-question"><legend>1. 새로운 내용을 배울 때 무엇이 가장 좋나요?</legend>
+<label class="study-choice"><input type="radio" name="q1" value="story" required>이야기로 들으면 잘 이해돼요</label>
+<label class="study-choice"><input type="radio" name="q1" value="comic">그림과 만화로 보고 싶어요</label>
+<label class="study-choice"><input type="radio" name="q1" value="mindmap">서로 연결된 그림으로 정리하고 싶어요</label>
+<label class="study-choice"><input type="radio" name="q1" value="summary">중요한 내용만 짧게 알고 싶어요</label></fieldset>
+<fieldset class="study-question"><legend>2. 역사 시험을 준비한다면?</legend>
+<label class="study-choice"><input type="radio" name="q2" value="summary" required>핵심 문장을 모아 읽어요</label>
+<label class="study-choice"><input type="radio" name="q2" value="mindmap">개념끼리 선으로 연결해요</label>
+<label class="study-choice"><input type="radio" name="q2" value="story">사건의 흐름을 이야기해 봐요</label>
+<label class="study-choice"><input type="radio" name="q2" value="comic">그림 속 장면을 떠올려요</label></fieldset>
+<fieldset class="study-question"><legend>3. 내가 만들고 싶은 공부 자료는?</legend>
+<label class="study-choice"><input type="radio" name="q3" value="comic" required>재미있는 4컷 만화</label>
+<label class="study-choice"><input type="radio" name="q3" value="story">술술 읽히는 이야기</label>
+<label class="study-choice"><input type="radio" name="q3" value="summary">한 장짜리 요약 노트</label>
+<label class="study-choice"><input type="radio" name="q3" value="mindmap">알록달록한 마인드맵</label></fieldset>
+<div id="study-result" hidden role="status"></div>
+<div class="study-actions"><button class="feature-btn issue-primary" id="study-find" type="submit">나의 공부법 추천받기</button><button class="feature-btn" id="study-start" type="button" hidden>이 공부법으로 1단원 시작하기</button><button class="feature-btn" id="study-skip" type="button">직접 골라서 공부할래요</button></div>
+</form><p class="privacy-note">공부를 좋아하는 방식에 따라 추천해요. 학습 능력이나 성적을 판정하는 검사는 아니에요.</p>
 </dialog>
 <dialog id="certificate-dialog" class="feature-dialog" aria-labelledby="certificate-heading">
 <h2 id="certificate-heading">나만의 역사 탐험 인증서</h2><p class="privacy-note">전통 문양 · 내가 고른 역사 인물 · 오늘의 나</p><canvas id="certificate-preview" width="1600" height="1100" aria-label="이름과 완료 단원이 적힌 인증서 미리보기"></canvas>
@@ -1926,7 +1972,17 @@
             </section>
 </aside>
 <div class="learning-main">
-        <!-- 3. 메인 학습 탭 네비게이션 -->
+        <section class="history-tools" aria-label="역사 탐험 도구">
+<div class="card"><h2>🗺️ 나의 역사 탐험 지도</h2><p>단원 공부를 마치면 도장을 찍어 보세요! 기록은 이 기기의 브라우저에만 저장돼요.</p><div class="history-track" aria-label="학습 진도"><div id="history-progress-fill"></div></div><p id="history-progress-label" aria-live="polite">0 / 5단원 학습 완료</p><div class="history-tool-grid" id="history-stops"></div><button type="button" class="history-tool-action" id="history-mark-done">현재 단원 공부 완료 도장 찍기</button><button type="button" class="history-tool-action" id="history-reset">진도 초기화</button></div>
+<div class="card"><h2>⏳ 한눈에 보는 한국사 타임라인</h2><p>서로 다른 나라가 같은 시기에 존재하기도 했어요. 시대를 누르면 학습 단원으로 이동해요.</p><div class="history-timeline">
+<button type="button" data-history-era="unit1"><strong>고조선</strong><small>기원전 2333년 건국 전승 · 청동기 문화</small></button>
+<button type="button" data-history-era="unit2"><strong>삼국과 가야</strong><small>고구려·백제·신라·가야의 성장과 교류</small></button>
+<button type="button" data-history-era="unit3"><strong>통일신라와 발해</strong><small>7세기 후반~10세기 · 두 나라가 함께 존재한 시기</small></button>
+<button type="button" data-history-era="unit4"><strong>고려</strong><small>918~1392년 · 불교 문화와 청자·인쇄술</small></button>
+<button type="button" data-history-era="unit5"><strong>조선</strong><small>1392~1897년 · 유교 문화, 과학, 후기 생활 변화</small></button>
+</div><p class="history-timeline-note">※ 고조선 건국 연도는 전승에 따른 것이며, 각 시대의 경계와 나라의 존속 시기는 단순화해 나타냈어요. 발해는 698~926년, 통일신라는 보통 676~935년으로 설명해요.</p></div>
+</section>
+<!-- 3. 메인 학습 탭 네비게이션 -->
         <nav class="tabs-container" aria-label="학습 모드 선택">
             <div class="tabs-nav" role="tablist">
                 <button type="button" class="tab-btn active" data-target="tab-concept" id="tab-btn-concept" role="tab"
@@ -2860,7 +2916,7 @@ async function setMusic(on){
 document.getElementById('music-toggle').onclick=()=>setMusic(!musicOn);
 document.getElementById('music-volume').oninput=e=>{if(musicGain)musicGain.gain.setTargetAtTime(Number(e.target.value)/100,musicContext.currentTime,.2);};
 document.addEventListener('visibilitychange',()=>{if(document.hidden){closeCamera();if(musicOn)setMusic(false);}});
-const welcome=document.getElementById('welcome-dialog');document.querySelectorAll('[data-start-theme]').forEach(b=>b.onclick=()=>{setTheme(b.dataset.startTheme);welcome.close();if(document.getElementById('welcome-music').checked)setMusic(true);});welcome.addEventListener('cancel',()=>setTheme('light'));welcome.showModal();
+const welcome=document.getElementById('welcome-dialog');welcome.addEventListener('cancel',e=>{e.preventDefault();});if(typeof welcome.showModal==='function')welcome.showModal();
 window.addEventListener('pagehide',()=>{resetCertificate();setMusic(false);});
 
     </script>
@@ -3666,6 +3722,57 @@ window.addEventListener('beforeprint',()=>{
 window.addEventListener('afterprint',()=>{delete document.body.dataset.printMode;});
 updateBookmarks(true);
 
+</script>
+
+<script>
+(function(){
+"use strict";
+const ids=['unit1','unit2','unit3','unit4','unit5'], names=['고조선','삼국·가야','통일신라·발해','고려','조선'],icons=['🪨','🏯','🌄','🏺','📜'];
+const key='history-study-progress-v1';let progress={};
+try{const v=JSON.parse(localStorage.getItem(key)||'{}');if(v&&typeof v==='object')progress=v}catch(e){}
+const save=()=>{try{localStorage.setItem(key,JSON.stringify(progress))}catch(e){}};
+const selected=()=>document.querySelector('#toc-buttons .toc-btn.active')?.dataset.era||'all';
+function jump(era){
+ document.getElementById('tab-btn-concept')?.click();
+ document.querySelector('#toc-buttons .toc-btn[data-era="'+era+'"]')?.click();
+ document.getElementById('tab-concept')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function draw(){
+ const mount=document.getElementById('history-stops');if(!mount)return;mount.replaceChildren();
+ ids.forEach((id,i)=>{const b=document.createElement('button');b.type='button';b.className='history-stop'+(progress[id]?' done':'');
+ b.innerHTML='<span>'+icons[i]+'</span><strong>'+(i+1)+'단원 '+names[i]+'</strong><small>'+(progress[id]?'✅ 공부 완료':'○ 탐험하기')+'</small>';
+ b.addEventListener('click',()=>jump(id));mount.append(b)});
+ const count=ids.filter(id=>progress[id]).length;
+ document.getElementById('history-progress-label').textContent=count+' / 5단원 학습 완료';
+ document.getElementById('history-progress-fill').style.width=(count*20)+'%';
+}
+document.getElementById('history-mark-done')?.addEventListener('click',()=>{
+ let era=selected();if(era==='all'){alert('먼저 왼쪽에서 완료할 단원을 선택해 주세요.');return;}
+ progress[era]=true;save();draw();
+});
+document.getElementById('history-reset')?.addEventListener('click',()=>{
+ if(confirm('이 브라우저에 저장된 학습 완료 도장을 모두 지울까요?')){progress={};save();draw()}
+});
+document.querySelectorAll('[data-history-era]').forEach(b=>b.addEventListener('click',()=>jump(b.dataset.historyEra)));
+draw();
+const dialog=document.getElementById('welcome-dialog'),form=document.getElementById('study-preference-form');
+let recommended='comic';
+const namesByStyle={story:'📖 이야기형',mindmap:'🧠 마인드맵형',comic:'🎨 4컷 만화형',summary:'📝 핵심 요약형'};
+form?.addEventListener('submit',e=>{
+ e.preventDefault();const data=new FormData(form),votes={story:0,mindmap:0,comic:0,summary:0};
+ ['q1','q2','q3'].forEach(k=>{const v=data.get(k);if(v in votes)votes[v]++});
+ recommended=Object.keys(votes).sort((a,b)=>votes[b]-votes[a]||['comic','story','mindmap','summary'].indexOf(a)-['comic','story','mindmap','summary'].indexOf(b))[0];
+ const box=document.getElementById('study-result');box.hidden=false;box.textContent='추천 공부법은 '+namesByStyle[recommended]+'이에요! 다른 공부법도 언제든 선택할 수 있어요.';
+ document.getElementById('study-start').hidden=false;document.getElementById('study-find').textContent='다시 추천받기';
+});
+document.getElementById('study-start')?.addEventListener('click',()=>{
+ dialog.close();document.getElementById('tab-btn-concept')?.click();
+ document.querySelector('.style-btn[data-style="'+recommended+'"]')?.click();jump('unit1');
+});
+document.getElementById('study-skip')?.addEventListener('click',()=>{
+ dialog.close();document.getElementById('tab-btn-concept')?.click();document.getElementById('tab-concept')?.scrollIntoView({behavior:'smooth'});
+});
+})();
 </script>
 </body>
 
