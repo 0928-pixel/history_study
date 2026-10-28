@@ -1951,6 +1951,7 @@
 @media(prefers-reduced-motion:reduce){.history-stop,.history-stop.stamp-pop .history-stamp{animation:none!important}#welcome-dialog .study-choice{transition:none!important}}
 
 </style>
+    <link rel="stylesheet" href="/site-community.css">
 </head>
 
 <body>
@@ -2011,7 +2012,7 @@
 
         </header>
 
-        <div class="learning-layout">
+        <div class="learning-layout community-layout">
 <aside class="unit-sidebar" aria-label="한국사 단원 목차">
             <section class="toc-section" aria-label="시대별 목차 빠른 이동">
                 <div class="toc-title-wrap">
@@ -2783,9 +2784,16 @@
 
         </main>
 </div>
-<aside id="lesson-bookmarks" class="lesson-bookmarks print-control" aria-label="현재 단원 소목차 책갈피">
+<aside class="community-rail" aria-label="책갈피와 방문 통계">
+<div id="lesson-bookmarks" class="lesson-bookmarks print-control" aria-label="현재 단원 소목차 책갈피">
 <div class="bookmark-header"><h3>이 단원 책갈피</h3><button type="button" class="feature-btn" id="bookmark-toggle" aria-expanded="false" aria-controls="bookmark-body">📑 책갈피</button></div>
 <div class="bookmark-body" id="bookmark-body"><label for="bookmark-unit">바로 볼 단원</label><select id="bookmark-unit" aria-label="책갈피 단원 선택"></select><p class="bookmark-help">지금 선택한 공부 유형에 맞춰 바로 이동해요.</p><nav id="bookmark-links" aria-label="단원 안의 소주제"></nav><button type="button" class="feature-btn" id="bookmark-print">필요한 부분 인쇄</button></div>
+</div>
+<section class="visitor-card" aria-label="방문 통계">
+<h3>🌱 함께한 탐험대원</h3>
+<dl><dt>오늘 접속자</dt><dd id="visitor-today">—</dd><dt>누적 접속자</dt><dd id="visitor-total">—</dd></dl>
+<small id="visitor-status" role="status">방문 통계를 불러오고 있어요.</small>
+</section>
 </aside>
 </div><!-- learning-layout -->
 
@@ -2805,6 +2813,21 @@
             </div>
         </div>
 
+        <details class="community-feedback">
+            <summary>💌 요청사항 적기 · 함께 만드는 탐험대</summary>
+            <form id="community-feedback-form">
+                <p>건의사항, 개선 아이디어, 발견한 오류를 알려 주세요.</p>
+                <label for="feedback-kind">어떤 의견인가요?</label>
+                <select id="feedback-kind" name="kind"><option>건의사항</option><option>개선사항</option><option>오류 신고</option></select>
+                <label for="feedback-message">의견 내용</label>
+                <textarea id="feedback-message" name="message" required minlength="10" maxlength="2000" aria-describedby="feedback-help" placeholder="더 즐겁게 공부할 수 있는 아이디어를 10자 이상 적어 주세요."></textarea>
+                <p id="feedback-help" class="feedback-help">이름·전화번호 같은 개인정보는 적지 마세요. 의견은 운영자에게 이메일로 전달되며, 공개되지 않아요. 같은 내용은 하루 한 번만 전달돼요.</p>
+                <div class="feedback-honey" aria-hidden="true"><label for="feedback-website">Website</label><input id="feedback-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+                <button type="submit">의견 보내기 ✉️</button>
+                <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
+                <noscript>의견을 보내려면 자바스크립트를 켜 주세요.</noscript>
+            </form>
+        </details>
         <!-- 푸터 -->
         <footer>
             <p class="footer-note">🎒 2022 개정 교육과정 초등 사회과 한국사 교실</p>
@@ -3850,6 +3873,7 @@ document.getElementById('study-skip')?.addEventListener('click',()=>{
 });
 })();
 </script>
+<script src="/site-community.js" defer></script>
 </body>
 
 </html>
