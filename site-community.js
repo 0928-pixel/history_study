@@ -35,14 +35,22 @@
     if (button.disabled || !form.reportValidity()) return;
     const message = form.elements.message.value.trim();
     if (message.length < 10) { result.textContent = '내용은 공백을 제외하고 10자 이상 적어 주세요.'; return; }
+    const signature = form.elements.kind.value + '\n' + message;
+    let previous;
+    try { previous = JSON.parse(sessionStorage.getItem('history-feedback-last') || 'null'); } catch {}
+    if (previous && previous.signature === signature && Date.now() - previous.at < 86400000) {
+      result.textContent = '이 브라우저에서 이미 접수한 의견이에요. 다른 의견을 남겨 주세요.'; return;
+    }
     button.disabled = true; result.textContent = '의견을 보내고 있어요…';
     try {
-      const response = await fetch('/.netlify/functions/feedback', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin',
-        body: JSON.stringify({ kind: form.elements.kind.value, message, website: form.elements.website.value }), signal: AbortSignal.timeout(30000)
+      const fields = new URLSearchParams(new FormData(form));
+      fields.set('message', message);
+      const response = await fetch(form.getAttribute('action'), {
+        method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        credentials: 'same-origin', body: fields.toString(), signal: AbortSignal.timeout(30000)
       });
-      const data = await response.json();
-      if (!response.ok || !data.ok) throw new Error(data.error || '전송하지 못했어요. 잠시 후 다시 시도해 주세요.');
+      if (!response.ok) throw new Error('접수하지 못했어요. 잠시 후 다시 시도해 주세요.');
+      try { sessionStorage.setItem('history-feedback-last', JSON.stringify({ signature, at: Date.now() })); } catch {}
       form.reset(); result.textContent = '소중한 의견을 보냈어요. 더 즐거운 탐험에 도움이 될 거예요!';
     } catch (error) {
       result.textContent = error.name === 'TimeoutError' || error.name === 'TypeError' ? '연결을 확인한 뒤 같은 내용으로 다시 보내 주세요.' : error.message;

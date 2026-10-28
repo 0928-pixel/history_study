@@ -26,10 +26,4 @@ async function redis(command) {
   if (data.error) throw new Error('storage');
   return data.result;
 }
-function jsonBody(event) {
-  if (!(event.headers['content-type'] || '').startsWith('application/json')) throw new Error('media');
-  const text = event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString('utf8') : event.body || '';
-  if (Buffer.byteLength(text) > 12000) throw new Error('size');
-  return JSON.parse(text);
-}
-module.exports = { reply, required, originOK, hash, visitor, day, redis, jsonBody };
+module.exports = { reply, required, originOK, hash, visitor, day, redis };
