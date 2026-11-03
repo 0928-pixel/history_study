@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>신나는 초등 한국사 탐험대 </title>
+    <title>골라 배우는 초등 한국사 탐험대 </title>
     <meta name="description"
         content="2022 개정 초등 사회과 교육과정 맞춤 한국사 학습! 이야기형, 마인드맵, 4컷 만화, 요약 노트 중 원하는 스타일로 고르고 생생한 영상과 이미지로 역사 개념을 마스터해보세요.">
 
@@ -2010,7 +2010,7 @@
             <div class="curriculum-badge">
                 <span>📜</span> 2022 개정 사회과 교육과정 (초등 5~6학년군)
             </div>
-            <h1 class="site-title" id="main-heading">🇰🇷 신나는 초등 한국사 탐험대</h1>
+            <h1 class="site-title" id="main-heading"> 골라 배우는 초등 한국사 탐험대</h1>
             <p class="site-desc">AI가 그린 4컷 만화와 맞춤 공부 유형으로 만나는 우리 역사 이야기!</p>
 
             <!-- 2. 시대별 목차 (2022 개정 교육과정 5대 단원) -->
@@ -2938,7 +2938,7 @@ function drawCertificate(name,portrait){
  x.fillStyle='#24534e';x.fillRect(30,30,1540,1040);x.fillStyle='#f9eed6';x.fillRect(48,48,1504,1004);x.strokeStyle='#ba9a57';x.lineWidth=3;x.strokeRect(63,63,1474,974);
  for(let i=95;i<1510;i+=50){x.fillStyle=i%100===45?'#be7654':'#648e7b';x.save();x.translate(i,39);x.rotate(Math.PI/4);x.fillRect(-5,-5,10,10);x.restore();x.save();x.translate(i,1061);x.rotate(Math.PI/4);x.fillRect(-5,-5,10,10);x.restore();}
  cloud(x,225,165,1.25,'#b69b65');cloud(x,1375,165,1.25,'#b69b65');cloud(x,230,875,.85,'#d2bf97');cloud(x,1370,875,.85,'#d2bf97');flower(x,105,105,39);flower(x,1495,105,39);flower(x,105,995,39);flower(x,1495,995,39);
- x.textAlign='center';x.fillStyle='#506f60';x.font='700 25px "Noto Sans KR",sans-serif';x.fillText('신나는 초등 한국사 탐험대',800,145);
+ x.textAlign='center';x.fillStyle='#506f60';x.font='700 25px "Noto Sans KR",sans-serif';x.fillText('골라 배우는 초등 한국사 탐험대',800,145);
  x.fillStyle='#263e36';x.font='700 66px "Noto Sans KR",sans-serif';x.fillText('역사 탐험 완료 인증서',800,235);
  x.fillStyle='#9a7435';x.font='700 31px "Noto Sans KR",sans-serif';x.fillText(unitLabels[certificateUnit],800,301);
  x.strokeStyle='#c4aa74';x.lineWidth=1.6;x.beginPath();x.moveTo(430,338);x.lineTo(1170,338);x.stroke();
@@ -2959,7 +2959,7 @@ document.getElementById('issue-certificate').onclick=async()=>{
  const input=document.getElementById('certificate-name'),name=input.value.trim(),btn=document.getElementById('issue-certificate');
  if(!certificateUnit||!name){document.getElementById('certificate-error').textContent='이름이나 별명을 입력해 주세요.';input.focus();return;}
  closeCamera();const request=++certificateRequest;btn.disabled=true;btn.textContent='인증서를 꾸미고 있어요…';
- try{certificateDate=new Date().toLocaleDateString('ko-KR');certificateReturnFocus=btn;if(document.fonts){await Promise.race([document.fonts.ready.then(()=>document.fonts.load('700 40px "Noto Sans KR"',name+unitLabels[certificateUnit]+'신나는 초등 한국사 탐험대 역사 탐험 완료 인증서 어린이 오늘의 나 배움 꽃 단원 퀴즈를 끝까지 마쳤기에 도전의 마음을 담아 드립니다 학습용 상상 일러스트 이름과 사진은 서버로 전송하지 않습니다')).catch(()=>null),new Promise(resolve=>setTimeout(resolve,2200))]);}const portrait=await loadPortrait(portraitSelect.value);if(request!==certificateRequest)return;drawCertificate(name,portrait);certDialog.showModal();}finally{btn.disabled=false;btn.textContent='나만의 인증서 발급받기';}
+ try{certificateDate=new Date().toLocaleDateString('ko-KR');certificateReturnFocus=btn;if(document.fonts){await Promise.race([document.fonts.ready.then(()=>document.fonts.load('700 40px "Noto Sans KR"',name+unitLabels[certificateUnit]+'골라 배우는 초등 한국사 탐험대 역사 탐험 완료 인증서 어린이 오늘의 나 배움 꽃 단원 퀴즈를 끝까지 마쳤기에 도전의 마음을 담아 드립니다 학습용 상상 일러스트 이름과 사진은 서버로 전송하지 않습니다')).catch(()=>null),new Promise(resolve=>setTimeout(resolve,2200))]);}const portrait=await loadPortrait(portraitSelect.value);if(request!==certificateRequest)return;drawCertificate(name,portrait);certDialog.showModal();}finally{btn.disabled=false;btn.textContent='나만의 인증서 발급받기';}
 };
 document.getElementById('close-certificate').onclick=closeCertificate;certDialog.addEventListener('cancel',e=>{e.preventDefault();closeCertificate();});
 document.getElementById('save-certificate').onclick=()=>{
@@ -3778,7 +3778,7 @@ function buildPrintContent(){
  const unit=document.getElementById('lesson-print-unit').value||outlineUnit,card=document.getElementById('card-'+unit);if(!card)return null;
  const ids=[...document.querySelectorAll('#lesson-print-options input:checked')].map(e=>e.value),answers=document.getElementById('lesson-print-answers').checked;
  const doc=document.createElement('article');doc.className='lesson-handout';
- const header=document.createElement('header');header.className='lesson-handout-header';const brand=document.createElement('p');brand.textContent='신나는 초등 한국사 탐험대 · 수업 나눔 자료';const title=document.createElement('h1');title.textContent=plainHeading(card.querySelector('.card-title'));const meta=document.createElement('p');meta.className='handout-student-meta';meta.textContent='이름: ____________________    날짜: ____________________';const type=document.createElement('span');type.className='handout-kind';type.textContent=answers?'교사용 · 답과 생각의 실마리 포함':'학생용 · 확인 질문의 답과 탐구 힌트 제외';header.append(brand,title,meta,type);doc.append(header);
+ const header=document.createElement('header');header.className='lesson-handout-header';const brand=document.createElement('p');brand.textContent='골라 배우는 초등 한국사 탐험대 · 수업 나눔 자료';const title=document.createElement('h1');title.textContent=plainHeading(card.querySelector('.card-title'));const meta=document.createElement('p');meta.className='handout-student-meta';meta.textContent='이름: ____________________    날짜: ____________________';const type=document.createElement('span');type.className='handout-kind';type.textContent=answers?'교사용 · 답과 생각의 실마리 포함':'학생용 · 확인 질문의 답과 탐구 힌트 제외';header.append(brand,title,meta,type);doc.append(header);
  for(const part of lessonParts.get(unit)||[]){if(!ids.includes(part.id))continue;const section=document.createElement('section');section.className='handout-chunk';const heading=document.createElement('h2');heading.textContent=part.label;section.append(heading,preparePrintClone(part,answers));doc.append(section);}
  const footer=document.createElement('p');footer.className='handout-footer';footer.textContent='학습 자료 참고: 국사편찬위원회 우리역사넷. 자료의 단서를 찾고, 근거를 들어 내 생각을 설명해 보세요.';doc.append(footer);return {doc,count:ids.length};
 }
